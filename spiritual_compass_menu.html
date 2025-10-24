@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -276,18 +276,49 @@
             background: linear-gradient(145deg, rgba(52, 24, 16, 0.95), rgba(76, 44, 23, 0.9));
         }
 
+        /* Зміни для заміни іконок на фото */
         .tool-icon {
-            font-size: clamp(3.5rem, 8vw, 5rem);
-            color: #d4af37;
+            /* Базові стилі для заміни іконки зображенням */
+            font-size: 0; /* Приховуємо емодзі */
+            color: transparent;
             margin-bottom: 25px;
             display: block;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-shadow: none;
             transition: transform 0.4s ease;
+            
+            /* Стилі для фонового зображення */
+            background-size: contain; /* Зображення вміщається, не обрізається */
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100px; /* Фіксована ширина для контейнера зображення */
+            height: 100px; /* Фіксована висота для контейнера зображення */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 25px;
+            border-radius: 15px; /* Невелике заокруглення для кращого вигляду фото */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Додаємо тінь, щоб виділити фото */
         }
 
         .tool-card:hover .tool-icon {
-            transform: scale(1.15) rotateY(360deg);
+            transform: scale(1.15); /* Збільшення при наведенні */
+            /* Видаляємо rotateY(360deg), оскільки це фото */
         }
+
+        /* 1. Біблія онлайн */
+        .tool-card-bible .tool-icon {
+            background-image: url('bibleonline.jpg'); /* Шлях до вашого фото */
+        }
+
+        /* 2. Молитовний журнал */
+        .tool-card-prayer .tool-icon {
+            background-image: url('images (1).jpg'); /* Шлях до вашого фото */
+        }
+
+        /* 3. План читання Біблії */
+        .tool-card-plan .tool-icon {
+            background-image: url('sddefault.jpg'); /* Шлях до вашого фото */
+        }
+        /* Кінець змін для заміни іконок на фото */
 
         .tool-title {
             font-family: 'Cinzel', serif;
@@ -583,11 +614,10 @@
         </header>
 
         <main>
-            <section id="tools">
+<section id="tools">
                 <div class="tools-grid">
-                    <!-- Библия онлайн -->
-                    <div class="tool-card">
-                        <span class="tool-icon">📖</span>
+                    <div class="tool-card tool-card-bible">
+                        <span class="tool-icon"></span>
                         <h2 class="tool-title">Біблія онлайн</h2>
                         <p class="tool-description">Повний текст Святого Письма завжди під рукою. Читайте, досліджуйте та відкривайте Слово Боже у будь-який час.</p>
                         <ul class="tool-features">
@@ -598,9 +628,8 @@
                         <a href="https://christian-word.github.io/bible-core/" class="open-button">Відкрити</a>
                     </div>
 
-                    <!-- Молитвенный журнал -->
-                    <div class="tool-card">
-                        <span class="tool-icon">🙏</span>
+                    <div class="tool-card tool-card-prayer">
+                        <span class="tool-icon"></span>
                         <h2 class="tool-title">Молитовний журнал</h2>
                         <p class="tool-description">Ведіть записи своїх молитов, прохань та відповідей від Бога. Зміцнюйте свою віру через свідчення.</p>
                         <ul class="tool-features">
@@ -611,9 +640,8 @@
                         <a href="https://christian-word.github.io/daily-prayers/" class="open-button">Відкрити</a>
                     </div>
 
-                    <!-- План чтения Библии -->
-                    <div class="tool-card">
-                        <span class="tool-icon">📅</span>
+                    <div class="tool-card tool-card-plan">
+                        <span class="tool-icon"></span>
                         <h2 class="tool-title">План читання Біблії</h2>
                         <p class="tool-description">Структурований підхід до читання всього Письма. Рухайтеся від Буття до Одкровення з мудрим плануванням.</p>
                         <ul class="tool-features">
@@ -744,6 +772,4 @@
         });
     </script>
 </body>
-
 </html>
-
