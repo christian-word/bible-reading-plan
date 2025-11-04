@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -274,10 +274,123 @@
       gap: 0.5rem;
     }
 
+    /* Дополнительные стили для модального окна Библии */
+    .bible-navigation {
+      background: #f8fafc;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .verse-text {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+
+    .verse-num {
+      font-weight: bold;
+      color: var(--primary);
+      margin-right: 0.3rem;
+      font-size: 0.85rem;
+    }
+
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
       .planner-card { padding: 1.5rem; }
       .plan-meta, .actions, .day-actions { flex-direction: column; }
+      
+      /* MOBILE-FIRST */
+      .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+
+      .planner-card {
+        padding: 1.0rem;
+        border-radius: 0.75rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        width: calc(100% + 1rem);
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+      }
+
+      .plan-meta {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+      .meta-item svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .reading-day {
+        padding: 0.9rem;
+        margin-bottom: 0.6rem;
+      }
+      .day-number {
+        font-size: 1rem;
+      }
+      .day-date {
+        font-size: 0.75rem;
+      }
+
+      .btn-bordered {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        min-width: 120px;
+      }
+
+      .motivational-quote p {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+      .motivational-quote cite {
+        font-size: 0.75rem;
+      }
+      .motivational-quote {
+        padding: 1.2rem 1rem;
+      }
+
+      .stats-card {
+        gap: 0.5rem;
+      }
+      .stat-item {
+        padding: 1rem 0.5rem;
+      }
+      .stat-value {
+        font-size: 2rem;
+      }
+
+      .day-readings {
+        gap: 0.25rem;
+      }
+      .reading-tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+      }
+
+      /* Адаптивность для модального окна Библии */
+      .bible-navigation > div {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      .bible-navigation > div > div {
+        min-width: 100%;
+      }
+      
+      #verseContent {
+        max-height: 50vh;
+        font-size: 1rem;
+      }
     }
 
     @media print {
@@ -286,111 +399,19 @@
       .plan-output { box-shadow: none; border: none; }
       .reading-day { border: 1px solid #ddd; page-break-inside: avoid; margin: 15px 0; }
     }
-
-
-/* ---------- MOBILE-FIRST ---------- */
-@media (max-width: 768px) {
-  /* 1. Контейнер без боковых полей */
-  .container {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  /* 2. Карточка «разжимается» до краёв */
-  .planner-card {
-    padding: 1.0rem;               /* было 1.5rem */
-    border-radius: 0.75rem;        /* чуть меньше скругления */
-    margin-left: -0.5rem;          /* компенсируем родительский padding */
-    margin-right: -0.5rem;
-    width: calc(100% + 1rem);      /* 100 % viewport, но без гор. скролла */
-  }
-
-  /* 3. Заголовок героя меньше – не ломает строку */
-  .hero h1 {
-    font-size: 1.75rem;            /* было 2.2rem */
-    line-height: 1.2;
-  }
-
-  /* 4. Мета-инфо в одну строку, переносим иконки вверх */
-  .plan-meta {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-  .meta-item svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  /* 5. Сами «дневные» карточки компактнее */
-  .reading-day {
-    padding: 0.9rem;               /* было 1.2rem */
-    margin-bottom: 0.6rem;         /* было 1rem */
-  }
-  .day-number {
-    font-size: 1rem;               /* не 1.1rem */
-  }
-  .day-date {
-    font-size: 0.75rem;            /* чуть мельче */
-  }
-
-  /* 6. Кнопки без «буквенного раздутия» */
-  .btn-bordered {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    min-width: 120px;
-  }
-
-  /* 7. Мотив-цитата: уменьшаем шрифт и отступы */
-  .motivational-quote p {
-    font-size: 1rem;               /* было 1.2rem */
-    line-height: 1.4;
-  }
-  .motivational-quote cite {
-    font-size: 0.75rem;
-  }
-  .motivational-quote {
-    padding: 1.2rem 1rem;          /* было 2rem */
-  }
-
-  /* 8. Прочие мелочи */
-  .stats-card {
-    gap: 0.5rem;
-  }
-  .stat-item {
-    padding: 1rem 0.5rem;
-  }
-  .stat-value {
-    font-size: 2rem;               /* было 2.5rem */
-  }
-
-  /* 9. Убираем «провал» вокруг day-readings */
-  .day-readings {
-    gap: 0.25rem;
-  }
-  .reading-tag {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.4rem;
-  }
-}
-
   </style>
 </head>
 <body>
   <header>
-
-  <div class="container">
-    <div class="header-content">
-      <a href="help.html" class="logo">Библия<span>План</span></a>
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <span>Читай. Размышляй. Расти.</span>
-        <a href="help.html" class="btn-bordered btn-small" style="text-decoration: none;">Помощь</a>
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">Библия<span>План</span></a>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span>Читай. Размышляй. Расти.</span>
+          <a href="help.html" class="btn-bordered btn-small" style="text-decoration: none;">Помощь</a>
+        </div>
       </div>
     </div>
-  </div>
-
-
   </header>
 
   <main class="main">
@@ -523,11 +544,69 @@
     </div>
   </main>
 
+  <!-- Обновленное модальное окно Библии -->
   <div class="modal" id="bibleModal">
-    <div class="modal-content">
+    <div class="modal-content" style="max-width: 1000px; max-height: 95vh;">
       <button class="modal-close" id="closeModal">×</button>
-      <h3 id="modalTitle"></h3>
-      <div id="verseContent" class="verse-text"></div>
+      
+      <!-- Навигация по книгам и главам -->
+      <div class="bible-navigation">
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <!-- Выбор книги -->
+          <div style="flex: 1; min-width: 200px;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem;">Книга:</label>
+            <select id="bookSelect" style="width: 100%; padding: 0.5rem; border: 2px solid var(--border); border-radius: 0.5rem;">
+              <!-- Заполнится JavaScript -->
+            </select>
+          </div>
+          
+          <!-- Выбор главы -->
+          <div style="flex: 1; min-width: 120px;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem;">Глава:</label>
+            <select id="chapterSelect" style="width: 100%; padding: 0.5rem; border: 2px solid var(--border); border-radius: 0.5rem;">
+              <!-- Заполнится JavaScript -->
+            </select>
+          </div>
+          
+          <!-- Кнопки навигации -->
+          <div style="display: flex; gap: 0.5rem; align-self: flex-end;">
+            <button class="btn-bordered btn-small" id="prevChapter" title="Предыдущая глава">←</button>
+            <button class="btn-bordered btn-small" id="nextChapter" title="Следующая глава">→</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Заголовок -->
+      <h3 id="modalTitle" style="margin-bottom: 1rem;"></h3>
+      
+      <!-- Контент -->
+      <div id="verseContent" class="verse-text" style="max-height: 60vh; overflow-y: auto; padding: 1rem; background: #f8fafc; border-radius: 0.5rem;"></div>
+      
+      <!-- Прогресс чтения -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+        <div id="readingProgress" style="font-size: 0.9rem; color: var(--text-light);"></div>
+        <button class="btn-bordered btn-small" id="markAsRead">Отметить прочитанным</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальные окна для подтверждения и уведомлений -->
+  <div class="modal" id="confirmModal">
+    <div class="modal-content" style="max-width: 400px; text-align:center;">
+      <h3 id="confirmTitle">Подтверждение</h3>
+      <p id="confirmMessage" style="margin:1rem 0; color:var(--text-light);"></p>
+      <div style="display:flex; gap:1rem; justify-content:center;">
+        <button class="btn-bordered" id="confirmYes">Да</button>
+        <button class="btn-bordered" id="confirmNo">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="alertModal">
+    <div class="modal-content" style="max-width: 400px; text-align:center;">
+      <h3>Уведомление</h3>
+      <p id="alertMessage" style="margin:1rem 0; color:var(--text-light);"></p>
+      <button class="btn-bordered" id="alertOk">OK</button>
     </div>
   </div>
 
@@ -558,6 +637,79 @@
       { text: "Итак вера от слышания, а слышание от слова Божия", source: "Римлянам 10:17" }
     ];
 
+    // Библия - полный список книг с количеством глав
+    const BIBLE_BOOKS = [
+      // Ветхий Завет
+      { name: "Бытие", chapters: 50, abbr: "Быт", testament: "OT" },
+      { name: "Исход", chapters: 40, abbr: "Исх", testament: "OT" },
+      { name: "Левит", chapters: 27, abbr: "Лев", testament: "OT" },
+      { name: "Числа", chapters: 36, abbr: "Чис", testament: "OT" },
+      { name: "Второзаконие", chapters: 34, abbr: "Втор", testament: "OT" },
+      { name: "Иисус Навин", chapters: 24, abbr: "Нав", testament: "OT" },
+      { name: "Судьи", chapters: 21, abbr: "Суд", testament: "OT" },
+      { name: "Руфь", chapters: 4, abbr: "Руфь", testament: "OT" },
+      { name: "1 Царств", chapters: 31, abbr: "1Цар", testament: "OT" },
+      { name: "2 Царств", chapters: 24, abbr: "2Цар", testament: "OT" },
+      { name: "3 Царств", chapters: 22, abbr: "3Цар", testament: "OT" },
+      { name: "4 Царств", chapters: 25, abbr: "4Цар", testament: "OT" },
+      { name: "1 Паралипоменон", chapters: 29, abbr: "1Пар", testament: "OT" },
+      { name: "2 Паралипоменон", chapters: 36, abbr: "2Пар", testament: "OT" },
+      { name: "Ездра", chapters: 10, abbr: "Ездр", testament: "OT" },
+      { name: "Неемия", chapters: 13, abbr: "Неем", testament: "OT" },
+      { name: "Есфирь", chapters: 10, abbr: "Есф", testament: "OT" },
+      { name: "Иов", chapters: 42, abbr: "Иов", testament: "OT" },
+      { name: "Псалтирь", chapters: 150, abbr: "Пс", testament: "OT" },
+      { name: "Притчи", chapters: 31, abbr: "Прит", testament: "OT" },
+      { name: "Екклесиаст", chapters: 12, abbr: "Еккл", testament: "OT" },
+      { name: "Песнь Песней", chapters: 8, abbr: "Песн", testament: "OT" },
+      { name: "Исаия", chapters: 66, abbr: "Ис", testament: "OT" },
+      { name: "Иеремия", chapters: 52, abbr: "Иер", testament: "OT" },
+      { name: "Плач Иеремии", chapters: 5, abbr: "Плач", testament: "OT" },
+      { name: "Иезекииль", chapters: 48, abbr: "Иез", testament: "OT" },
+      { name: "Даниил", chapters: 12, abbr: "Дан", testament: "OT" },
+      { name: "Осия", chapters: 14, abbr: "Ос", testament: "OT" },
+      { name: "Иоиль", chapters: 3, abbr: "Иоил", testament: "OT" },
+      { name: "Амос", chapters: 9, abbr: "Ам", testament: "OT" },
+      { name: "Авдий", chapters: 1, abbr: "Авд", testament: "OT" },
+      { name: "Иона", chapters: 4, abbr: "Ион", testament: "OT" },
+      { name: "Михей", chapters: 7, abbr: "Мих", testament: "OT" },
+      { name: "Наум", chapters: 3, abbr: "Наум", testament: "OT" },
+      { name: "Аввакум", chapters: 3, abbr: "Авв", testament: "OT" },
+      { name: "Софония", chapters: 3, abbr: "Соф", testament: "OT" },
+      { name: "Аггей", chapters: 2, abbr: "Агг", testament: "OT" },
+      { name: "Захария", chapters: 14, abbr: "Зах", testament: "OT" },
+      { name: "Малахия", chapters: 4, abbr: "Мал", testament: "OT" },
+      
+      // Новый Завет
+      { name: "Матфея", chapters: 28, abbr: "Мф", testament: "NT" },
+      { name: "Марка", chapters: 16, abbr: "Мк", testament: "NT" },
+      { name: "Луки", chapters: 24, abbr: "Лк", testament: "NT" },
+      { name: "Иоанна", chapters: 21, abbr: "Ин", testament: "NT" },
+      { name: "Деяния", chapters: 28, abbr: "Деян", testament: "NT" },
+      { name: "Римлянам", chapters: 16, abbr: "Рим", testament: "NT" },
+      { name: "1 Коринфянам", chapters: 16, abbr: "1Кор", testament: "NT" },
+      { name: "2 Коринфянам", chapters: 13, abbr: "2Кор", testament: "NT" },
+      { name: "Галатам", chapters: 6, abbr: "Гал", testament: "NT" },
+      { name: "Ефесянам", chapters: 6, abbr: "Еф", testament: "NT" },
+      { name: "Филиппийцам", chapters: 4, abbr: "Флп", testament: "NT" },
+      { name: "Колоссянам", chapters: 4, abbr: "Кол", testament: "NT" },
+      { name: "1 Фессалоникийцам", chapters: 5, abbr: "1Фес", testament: "NT" },
+      { name: "2 Фессалоникийцам", chapters: 3, abbr: "2Фес", testament: "NT" },
+      { name: "1 Тимофею", chapters: 6, abbr: "1Тим", testament: "NT" },
+      { name: "2 Тимофею", chapters: 4, abbr: "2Тим", testament: "NT" },
+      { name: "Титу", chapters: 3, abbr: "Тит", testament: "NT" },
+      { name: "Филимону", chapters: 1, abbr: "Флм", testament: "NT" },
+      { name: "Евреям", chapters: 13, abbr: "Евр", testament: "NT" },
+      { name: "Иакова", chapters: 5, abbr: "Иак", testament: "NT" },
+      { name: "1 Петра", chapters: 5, abbr: "1Пет", testament: "NT" },
+      { name: "2 Петра", chapters: 3, abbr: "2Пет", testament: "NT" },
+      { name: "1 Иоанна", chapters: 5, abbr: "1Ин", testament: "NT" },
+      { name: "2 Иоанна", chapters: 1, abbr: "2Ин", testament: "NT" },
+      { name: "3 Иоанна", chapters: 1, abbr: "3Ин", testament: "NT" },
+      { name: "Иуды", chapters: 1, abbr: "Иуд", testament: "NT" },
+      { name: "Откровение", chapters: 22, abbr: "Откр", testament: "NT" }
+    ];
+
     // === DOM ===
     const form = document.getElementById('planForm');
     const goalSelect = document.getElementById('goal');
@@ -583,37 +735,174 @@
 
     let currentPlan = null;
     let planId = null;
+    let currentBookIndex = 0;
+    let currentChapter = 1;
+
+    // === Инициализация выбора книг ===
+    function initializeBibleSelector() {
+      const bookSelect = document.getElementById('bookSelect');
+      const chapterSelect = document.getElementById('chapterSelect');
+      
+      // Заполняем книги
+      BIBLE_BOOKS.forEach((book, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = `${book.name} (${book.abbr})`;
+        option.dataset.testament = book.testament;
+        bookSelect.appendChild(option);
+      });
+      
+      // Обновляем главы при выборе книги
+      bookSelect.addEventListener('change', function() {
+        currentBookIndex = parseInt(this.value);
+        updateChapterSelector();
+        loadBibleChapter();
+      });
+      
+      // Обновляем при выборе главы
+      chapterSelect.addEventListener('change', function() {
+        currentChapter = parseInt(this.value);
+        loadBibleChapter();
+      });
+      
+      // Кнопки навигации
+      document.getElementById('prevChapter').addEventListener('click', goToPrevChapter);
+      document.getElementById('nextChapter').addEventListener('click', goToNextChapter);
+      
+      // Отметка как прочитанного
+      document.getElementById('markAsRead').addEventListener('click', markChapterAsRead);
+    }
+
+    // Обновление списка глав
+    function updateChapterSelector() {
+      const chapterSelect = document.getElementById('chapterSelect');
+      const book = BIBLE_BOOKS[currentBookIndex];
+      
+      chapterSelect.innerHTML = '';
+      for (let i = 1; i <= book.chapters; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = i;
+        chapterSelect.appendChild(option);
+      }
+      
+      chapterSelect.value = currentChapter;
+    }
+
+    // Навигация по главам
+    function goToPrevChapter() {
+      if (currentChapter > 1) {
+        currentChapter--;
+        document.getElementById('chapterSelect').value = currentChapter;
+        loadBibleChapter();
+      } else if (currentBookIndex > 0) {
+        // Переход к предыдущей книге
+        currentBookIndex--;
+        const book = BIBLE_BOOKS[currentBookIndex];
+        currentChapter = book.chapters;
+        document.getElementById('bookSelect').value = currentBookIndex;
+        updateChapterSelector();
+        loadBibleChapter();
+      }
+    }
+
+    function goToNextChapter() {
+      const book = BIBLE_BOOKS[currentBookIndex];
+      if (currentChapter < book.chapters) {
+        currentChapter++;
+        document.getElementById('chapterSelect').value = currentChapter;
+        loadBibleChapter();
+      } else if (currentBookIndex < BIBLE_BOOKS.length - 1) {
+        // Переход к следующей книге
+        currentBookIndex++;
+        currentChapter = 1;
+        document.getElementById('bookSelect').value = currentBookIndex;
+        updateChapterSelector();
+        loadBibleChapter();
+      }
+    }
+
+    // Загрузка главы
+    async function loadBibleChapter() {
+      const book = BIBLE_BOOKS[currentBookIndex];
+      const bookNumber = getBookNumber(book.abbr);
+      
+      modalTitle.textContent = `${book.name}, глава ${currentChapter}`;
+      verseContent.innerHTML = '<p style="text-align: center;">Загрузка текста...</p>';
+      
+      try {
+        const response = await fetch(`${BIBLE_API}${bookNumber}/${currentChapter}/`);
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const verses = await response.json();
+        let html = '';
+        
+        verses.forEach(verse => {
+          if (verse.verse) {
+            html += `<span class="verse-num">${verse.verse}</span>${verse.text}<br>`;
+          }
+        });
+        
+        verseContent.innerHTML = html || '<p>Текст не найден.</p>';
+        updateReadingProgress();
+        
+      } catch (error) {
+        verseContent.innerHTML = `
+          <div style="text-align: center; color: var(--warning);">
+            <p>Не удалось загрузить текст из онлайн-источника.</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">Попробуйте:</p>
+            <ul style="text-align: left; display: inline-block; margin-top: 0.5rem;">
+              <li>Проверить подключение к интернету</li>
+              <li>Обновить страницу</li>
+              <li>Использовать печатную Библию</li>
+            </ul>
+          </div>
+        `;
+      }
+    }
+
+    // Обновление прогресса чтения
+    function updateReadingProgress() {
+      const book = BIBLE_BOOKS[currentBookIndex];
+      const progress = document.getElementById('readingProgress');
+      const totalChapters = BIBLE_BOOKS.reduce((sum, book) => sum + book.chapters, 0);
+      const currentChapterNum = BIBLE_BOOKS.slice(0, currentBookIndex)
+        .reduce((sum, book) => sum + book.chapters, 0) + currentChapter;
+      
+      const percentage = Math.round((currentChapterNum / totalChapters) * 100);
+      progress.textContent = `Прогресс чтения Библии: ${percentage}% (${currentChapterNum}/${totalChapters} глав)`;
+    }
+
+    // Отметка главы как прочитанной
+    function markChapterAsRead() {
+      const book = BIBLE_BOOKS[currentBookIndex];
+      const reference = `${book.abbr}.${currentChapter}`;
+      
+      // Находим текущий день в плане и добавляем эту главу в прочитанные
+      if (currentPlan) {
+        const today = new Date().toISOString().split('T')[0];
+        const todayPlan = currentPlan.days.find(day => day.date === today);
+        
+        if (todayPlan && !todayPlan.readings.includes(reference)) {
+          todayPlan.readings.push(reference);
+          // Можно добавить сохранение в localStorage
+          showAlert(`Глава ${reference} добавлена в сегодняшний план!`);
+        }
+      }
+      
+      showAlert(`Глава ${reference} отмечена как прочитанная!`);
+    }
 
     // === Модальные окна ===
-    const confirmModal = document.createElement('div');
-    const alertModal = document.createElement('div');
-    document.body.append(confirmModal, alertModal);
+    const confirmModal = document.getElementById('confirmModal');
+    const alertModal = document.getElementById('alertModal');
 
     function setupModals() {
-      confirmModal.className = 'modal';
-      confirmModal.innerHTML = `
-        <div class="modal-content" style="max-width: 400px; text-align:center;">
-          <h3 id="confirmTitle">Подтверждение</h3>
-          <p id="confirmMessage" style="margin:1rem 0; color:var(--text-light);"></p>
-          <div style="display:flex; gap:1rem; justify-content:center;">
-            <button class="btn-bordered" id="confirmYes">Да</button>
-            <button class="btn-bordered" id="confirmNo">Отмена</button>
-          </div>
-        </div>
-      `;
-
-      alertModal.className = 'modal';
-      alertModal.innerHTML = `
-        <div class="modal-content" style="max-width: 400px; text-align:center;">
-          <h3>Уведомление</h3>
-          <p id="alertMessage" style="margin:1rem 0; color:var(--text-light);"></p>
-          <button class="btn-bordered" id="alertOk">OK</button>
-        </div>
-      `;
-
       document.getElementById('confirmNo').onclick = () => confirmModal.classList.remove('show');
       document.getElementById('alertOk').onclick = () => alertModal.classList.remove('show');
-      confirmModal.onclick = alertModal.onclick = (e) => { if (e.target === confirmModal || e.target === alertModal) e.target.classList.remove('show'); };
+      confirmModal.onclick = alertModal.onclick = (e) => { 
+        if (e.target === confirmModal || e.target === alertModal) e.target.classList.remove('show'); 
+      };
     }
 
     function showConfirm(title, message, onYes) {
@@ -634,6 +923,7 @@
     // === Инициализация ===
     window.addEventListener('DOMContentLoaded', () => {
       setupModals();
+      initializeBibleSelector();
       loadSavedPlans();
       const lastPlanId = localStorage.getItem('lastActivePlanId');
       if (lastPlanId) loadPlanById(lastPlanId);
@@ -901,41 +1191,31 @@
     async function openBibleModal(ref) {
       const match = ref.match(/([А-Яа-яЁё]+)\.?\s*(\d+)(?:-(\d+))?/);
       if (!match) {
-        verseContent.innerHTML = '<p>Ошибка формата ссылки.</p>';
-        modal.classList.add('show');
-        return;
-      }
-
-      const bookName = match[1];
-      const chStart = parseInt(match[2]);
-      const chEnd = match[3] ? parseInt(match[3]) : chStart;
-
-      const bookNum = getBookNumber(bookName);
-      if (!bookNum) {
-        verseContent.innerHTML = `<p style="color:#f59e0b;">Книга не найдена: ${bookName}</p>`;
-        modal.classList.add('show');
-        return;
-      }
-
-      modalTitle.textContent = `${ref} (Синодальный перевод)`;
-      verseContent.innerHTML = '<p>Загрузка текста...</p>';
-      modal.classList.add('show');
-
-      try {
-        let html = '';
-        for (let ch = chStart; ch <= chEnd; ch++) {
-          const res = await fetch(`${BIBLE_API}${bookNum}/${ch}/`);
-          if (!res.ok) throw new Error();
-          const verses = await res.json();
-          html += `<h4>Глава ${ch}</h4>`;
-          verses.forEach(v => {
-            if (v.verse) html += `<span class="verse-num">${v.verse}</span>${v.text}<br>`;
-          });
+        // Если ссылка не распознана, открываем модальное окно с первой книгой
+        currentBookIndex = 0;
+        currentChapter = 1;
+      } else {
+        const bookName = match[1];
+        const chapter = parseInt(match[2]);
+        
+        // Находим индекс книги
+        const bookIndex = BIBLE_BOOKS.findIndex(book => 
+          book.abbr === bookName || book.name.includes(bookName)
+        );
+        
+        if (bookIndex !== -1) {
+          currentBookIndex = bookIndex;
+          currentChapter = chapter;
         }
-        verseContent.innerHTML = html || '<p>Текст не найден.</p>';
-      } catch {
-        verseContent.innerHTML = `<p style="color:#f59e0b;">Заглушка (нет сети): "В начале сотворил Бог небо и землю..."</p>`;
       }
+      
+      // Обновляем селекторы
+      document.getElementById('bookSelect').value = currentBookIndex;
+      updateChapterSelector();
+      
+      // Показываем модальное окно и загружаем главу
+      modal.classList.add('show');
+      await loadBibleChapter();
     }
 
     function getBookNumber(name) {
