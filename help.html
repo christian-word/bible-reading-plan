@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Помощь - БиблияПлан</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --secondary: #f472b6;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 1rem 0;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .logo span { color: var(--secondary); }
+
+    .main { padding: 2rem 0; }
+
+    .help-card {
+      background: var(--card);
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .help-section { margin-bottom: 2.5rem; }
+    .help-section:last-child { margin-bottom: 0; }
+
+    .help-title {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .help-subtitle {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      margin: 1.5rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .help-content {
+      background: #f8fafc;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border-left: 4px solid var(--primary);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .step-list { list-style: none; counter-reset: step-counter; }
+    .step-item {
+      counter-increment: step-counter;
+      margin-bottom: 1.5rem;
+      padding-left: 3rem;
+      position: relative;
+    }
+    .step-item:before {
+      content: counter(step-counter);
+      background: var(--primary);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: bold;
+    }
+
+    .tip-box {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .warning-box {
+      background: #fef3c7;
+      border: 1px solid #fcd34d;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .btn-bordered {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .btn-bordered:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .back-home:hover {
+      color: var(--primary-dark);
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow: hidden;
+    }
+    .faq-question {
+      background: white;
+      padding: 1.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      background: #f8fafc;
+      padding: 1.25rem;
+      border-top: 1px solid var(--border);
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .help-card { padding: 1.5rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">Библия<span>План</span></a>
+        <div>Помощь и инструкции</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <a href="index.html" class="back-home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Вернуться к приложению
+      </a>
+
+      <div class="help-card">
+        <h1 class="help-title">📚 Помощь по БиблияПлан</h1>
+        
+        <div class="help-section">
+          <h2 class="help-subtitle">🎯 Что это такое?</h2>
+          <div class="help-content">
+            <p>БиблияПлан — это интеллектуальный помощник для систематического чтения Библии. Приложение использует ИИ для создания персонализированных планов чтения согласно вашим целям, срокам и предпочтениям.</p>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <h2 class="help-subtitle">🚀 Быстрый старт</h2>
+          <ol class="step-list">
+            <li class="step-item">
+              <strong>Выберите цель</strong> - что хотите прочитать (вся Библия, Новый Завет, отдельные книги)
+            </li>
+            <li class="step-item">
+              <strong>Укажите срок</strong> - за сколько дней планируете завершить чтение
+            </li>
+            <li class="step-item">
+              <strong>Выберите стиль</strong> - последовательный, хронологический, тематический и др.
+            </li>
+            <li class="step-item">
+              <strong>Добавьте пожелания</strong> - особые требования к плану
+            </li>
+            <li class="step-item">
+              <strong>Нажмите "Создать план"</strong> - ИИ сгенерирует ваш персональный план
+            </li>
+          </ol>
+        </div>
+
+        <div class="help-section">
+          <h2 class="help-subtitle">📖 Основные функции</h2>
+          
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🎯</div>
+              <h3>Создание плана</h3>
+              <p>Выберите цель, срок и стиль чтения. ИИ создаст сбалансированный план под ваши потребности.</p>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <h3>Отслеживание прогресса</h3>
+              <p>Отмечайте прочитанные дни, следите за статистикой и поддерживайте серию чтения.</p>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">💭</div>
+              <h3>Заметки и анализ</h3>
+              <p>Добавляйте свои мысли и получайте ИИ-анализ для глубокого понимания текста.</p>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">💾</div>
+              <h3>Сохранение данных</h3>
+              <p>Все планы и прогресс автоматически сохраняются в вашем браузере.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <h2 class="help-subtitle">💡 Советы по использованию</h2>
+          
+          <div class="tip-box">
+            <h4>Для начинающих</h4>
+            <p>• Начните с "Евангелия" или "Псалмы и Притчи"<br>
+               • Выберите спокойный темп (1-2 главы в день)<br>
+               • Используйте стиль "Последовательный"</p>
+          </div>
+          
+          <div class="tip-box">
+            <h4>Для опытных читателей</h4>
+            <p>• Попробуйте "Хронологический" стиль<br>
+               • Используйте "Тематическое" чтение<br>
+               • Добавляйте развернутые комментарии для ИИ-анализа</p>
+          </div>
+          
+          <div class="tip-box">
+            <h4>Для максимальной эффективности</h4>
+            <p>• Читайте в одно и то же время дня<br>
+               • Используйте функцию заметок сразу после чтения<br>
+               • Запрашивайте ИИ-анализ для сложных отрывков<br>
+               • Следите за серией дней для поддержания мотивации</p>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <h2 class="help-subtitle">❓ Часто задаваемые вопросы</h2>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Как работает ИИ-генератор?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              ИИ анализирует ваши предпочтения и создает сбалансированный план, учитывающий объем текста, логическую последовательность и тематические связи между книгами.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Что делать, если ИИ не отвечает?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              При проблемах с подключением система автоматически создает резервный план на основе стандартных шаблонов.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Как сохраняется прогресс?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Все данные автоматически сохраняются в вашем браузере. Прогресс синхронизируется между сессиями.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Можно ли изменить план после создания?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              План фиксированный, но вы можете создать новый план с другими параметрами или пропускать дни без нарушения общего прогресса.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              Текст Библии не загружается - что делать?
+              <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Используется внешний источник (bolls.life). При отсутствии интернета показывается заглушка. Для офлайн-чтения используйте печатную версию.
+            </div>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <h2 class="help-subtitle">⚠️ Решение проблем</h2>
+          
+          <div class="warning-box">
+            <h4>План не генерируется</h4>
+            <p>• Проверьте подключение к интернету<br>
+               • Убедитесь, что все обязательные поля заполнены<br>
+               • Попробуйте упростить пожелания в поле "Дополнительно"</p>
+          </div>
+          
+          <div class="warning-box">
+            <h4>Прогресс сбросился</h4>
+            <p>• Данные хранятся в вашем браузере<br>
+               • Не очищайте историю браузера и cookies<br>
+               • Используйте экспорт для резервного копирования</p>
+          </div>
+        </div>
+
+        <div class="help-section" style="text-align: center; margin-top: 2rem;">
+          <p><strong>Совет:</strong> Начните с небольшого плана (7-14 дней) чтобы оценить удобство системы!</p>
+          <a href="index.html" class="btn-bordered" style="margin-top: 1rem;">
+            Начать использовать
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
+        
+        const icon = question.querySelector('span');
+        icon.textContent = item.classList.contains('active') ? '−' : '+';
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

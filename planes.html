@@ -1,0 +1,1164 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>БиблияПлан — ИИ-генератор с чтением и анализом</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --secondary: #f472b6;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: sticky; top: 0; z-index: 100;
+      padding: 1rem 0;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    .logo span { color: var(--secondary); }
+
+    .main { padding: 3rem 0; }
+    .hero { text-align: center; margin-bottom: 3rem; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.2rem; color: var(--text-light); max-width: 700px; margin: 0 auto; }
+
+    .planner-card {
+      background: var(--card);
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .planner-card:hover { transform: translateY(-5px); }
+
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text); }
+    input, select, textarea {
+      width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 0.75rem;
+      font-size: 1rem; transition: all 0.3s ease; background: white;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79,70,229,0.1); }
+    textarea { min-height: 120px; resize: vertical; }
+
+    /* === ЕДИНЫЙ СТИЛЬ КНОПОК С РАМКОЙ === */
+    .btn-bordered {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      min-width: 140px;
+      justify-content: center;
+    }
+    .btn-bordered:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .btn-bordered:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .btn-bordered.btn-small {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+      min-width: auto;
+    }
+    .btn-bordered.btn-danger {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+    .btn-bordered.btn-danger:hover {
+      background: var(--danger);
+      color: white;
+    }
+
+    .spinner { width: 18px; height: 18px; border: 2px solid transparent; border-top: 2px solid currentColor; border-radius: 50%; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .plan-output { margin-top: 2rem; padding: 2rem; background: #f8fafc; border-radius: 1rem; border: 1px solid var(--border); display: none; }
+    .plan-output.show { display: block; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .motivational-quote {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+    .motivational-quote p {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 0;
+      line-height: 1.8;
+    }
+    .motivational-quote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .reading-streak {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fef3c7;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      color: #92400e;
+      margin: 1rem 0;
+    }
+    .reading-streak.active {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: white;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .stats-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .stat-item:hover {
+      transform: translateY(-5px);
+    }
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .plan-title { font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary); font-family: 'Playfair Display', serif; }
+    .plan-meta { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 0.5rem; color: var(--text-light); font-size: 0.95rem; }
+    .meta-item svg { width: 18px; height: 18px; }
+
+    .reading-list { list-style: none; }
+    .reading-day {
+      background: white; border-radius: 0.75rem; padding: 1.2rem; margin-bottom: 1rem;
+      border-left: 4px solid var(--primary); transition: all 0.3s ease; position: relative;
+    }
+    .reading-day:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); transform: translateX(3px); }
+    .reading-day.completed { border-left-color: var(--success); background: #f0fdf4; }
+
+    .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .day-number { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+    .day-date { font-size: 0.9rem; color: var(--text-light); }
+
+    .day-readings { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0; }
+    .reading-tag {
+      background: #e0e7ff; color: var(--primary); padding: 0.25rem 0.5rem; border-radius: 0.5rem;
+      font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s;
+    }
+    .reading-tag:hover { background: var(--primary); color: white; }
+
+    .day-actions { display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap; }
+    .checkbox-label { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.9rem; }
+    .checkbox-label input { accent-color: var(--success); }
+
+    .comment-section { margin-top: 1rem; display: none; }
+    .comment-section.show { display: block; }
+    .comment-textarea { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem; font-size: 0.9rem; }
+    .comment-textarea:focus { outline: none; border-color: var(--primary); }
+
+    .ai-insights { margin-top: 1rem; padding: 1rem; background: #fffbeb; border: 1px solid #fde68a; border-radius: 0.75rem; font-size: 0.9rem; display: none; }
+    .ai-insights.show { display: block; animation: fadeIn 0.4s; }
+    .ai-insights h4 { margin-bottom: 0.5rem; color: var(--warning); font-size: 1rem; }
+
+    .progress-container { margin: 2rem 0; background: var(--border); border-radius: 1rem; height: 12px; overflow: hidden; }
+    .progress-bar { height: 100%; background: linear-gradient(to right, var(--primary), var(--secondary)); width: 0%; border-radius: 1rem; transition: width 0.5s ease; }
+
+    .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;
+    }
+    .modal.show { display: flex; }
+    .modal-content {
+      background: white; width: 90%; max-width: 800px; max-height: 90vh; overflow-y: auto;
+      border-radius: 1rem; padding: 2rem; position: relative;
+    }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-light); }
+
+    .verse-text { line-height: 1.8; font-size: 1.1rem; }
+    .verse-num { font-weight: bold; color: var(--primary); margin-right: 0.3rem; }
+
+    .error { background: #fee2e2; color: #dc2626; padding: 1rem; border-radius: 0.75rem; margin: 1rem 0; border: 1px solid #fecaca; display: none; }
+    .error.show { display: block; }
+
+    .actions { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+
+    .saved-plans-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .saved-plan-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border: 2px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .saved-plan-item:hover {
+      border-color: var(--primary);
+      transform: translateX(5px);
+    }
+    .saved-plan-info h4 {
+      margin: 0 0 0.25rem 0;
+      color: var(--primary);
+    }
+    .saved-plan-info p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .saved-plan-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .planner-card { padding: 1.5rem; }
+      .plan-meta, .actions, .day-actions { flex-direction: column; }
+    }
+
+    @media print {
+      header, footer, .actions, #planForm, #loading, .day-actions, .ai-insights, .comment-section, .motivational-quote, .stats-card, .reading-streak { display: none !important; }
+      body { background: white; padding: 20px; }
+      .plan-output { box-shadow: none; border: none; }
+      .reading-day { border: 1px solid #ddd; page-break-inside: avoid; margin: 15px 0; }
+    }
+
+
+/* ---------- MOBILE-FIRST ---------- */
+@media (max-width: 768px) {
+  /* 1. Контейнер без боковых полей */
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* 2. Карточка «разжимается» до краёв */
+  .planner-card {
+    padding: 1.0rem;               /* было 1.5rem */
+    border-radius: 0.75rem;        /* чуть меньше скругления */
+    margin-left: -0.5rem;          /* компенсируем родительский padding */
+    margin-right: -0.5rem;
+    width: calc(100% + 1rem);      /* 100 % viewport, но без гор. скролла */
+  }
+
+  /* 3. Заголовок героя меньше – не ломает строку */
+  .hero h1 {
+    font-size: 1.75rem;            /* было 2.2rem */
+    line-height: 1.2;
+  }
+
+  /* 4. Мета-инфо в одну строку, переносим иконки вверх */
+  .plan-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .meta-item svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* 5. Сами «дневные» карточки компактнее */
+  .reading-day {
+    padding: 0.9rem;               /* было 1.2rem */
+    margin-bottom: 0.6rem;         /* было 1rem */
+  }
+  .day-number {
+    font-size: 1rem;               /* не 1.1rem */
+  }
+  .day-date {
+    font-size: 0.75rem;            /* чуть мельче */
+  }
+
+  /* 6. Кнопки без «буквенного раздутия» */
+  .btn-bordered {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    min-width: 120px;
+  }
+
+  /* 7. Мотив-цитата: уменьшаем шрифт и отступы */
+  .motivational-quote p {
+    font-size: 1rem;               /* было 1.2rem */
+    line-height: 1.4;
+  }
+  .motivational-quote cite {
+    font-size: 0.75rem;
+  }
+  .motivational-quote {
+    padding: 1.2rem 1rem;          /* было 2rem */
+  }
+
+  /* 8. Прочие мелочи */
+  .stats-card {
+    gap: 0.5rem;
+  }
+  .stat-item {
+    padding: 1rem 0.5rem;
+  }
+  .stat-value {
+    font-size: 2rem;               /* было 2.5rem */
+  }
+
+  /* 9. Убираем «провал» вокруг day-readings */
+  .day-readings {
+    gap: 0.25rem;
+  }
+  .reading-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+
+  <div class="container">
+    <div class="header-content">
+      <a href="help.html" class="logo">Библия<span>План</span></a>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <span>Читай. Размышляй. Расти.</span>
+        <a href="help.html" class="btn-bordered btn-small" style="text-decoration: none;">Помощь</a>
+      </div>
+    </div>
+  </div>
+
+
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="hero">
+        <h1>Персональный план чтения + Библия</h1>
+        <p>ИИ создаст план под твои цели, стиль и ритм. Читай, отмечай, анализируй — с текстом и ИИ-подсказками</p>
+      </div>
+
+      <!-- Сохранённые планы -->
+      <div class="saved-plans-section" id="savedPlansSection" style="display:none;">
+        <div class="planner-card">
+          <h3 style="margin-bottom:1rem;">Мои сохранённые планы</h3>
+          <div id="savedPlansList" class="saved-plans-list"></div>
+        </div>
+      </div>
+
+      <div class="planner-card">
+        <form id="planForm">
+          <div class="form-group">
+            <label for="goal">Что вы хотите прочитать?</label>
+            <select id="goal" required>
+              <option value="">Выберите цель</option>
+              <option value="Вся Библия">Вся Библия</option>
+              <option value="Новый Завет">Только Новый Завет</option>
+              <option value="Ветхий Завет">Только Ветхий Завет</option>
+              <option value="Евангелия">Евангелия (Матфей, Марк, Лука, Иоанн)</option>
+              <option value="Псалмы и Притчи">Псалмы и Притчи</option>
+              <option value="Послания Павла">Послания апостола Павла</option>
+              <option value="Книга пророка">Книга одного пророка (например, Исайя)</option>
+              <option value="custom">Другое (укажите ниже)</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="customGoalGroup" style="display:none;">
+            <label for="customGoal">Уточните, что именно:</label>
+            <input type="text" id="customGoal" placeholder="Например: Книга Бытие, Евангелие от Марка и Деяния" />
+          </div>
+
+          <div class="form-group">
+            <label for="duration">За какой срок?</label>
+            <select id="duration" required>
+              <option value="">Выберите срок</option>
+              <option value="7 дней">1 неделя</option>
+              <option value="14 дней">2 недели</option>
+              <option value="30 дней">1 месяц</option>
+              <option value="90 дней">3 месяца</option>
+              <option value="180 дней">6 месяцев</option>
+              <option value="365 дней">1 год</option>
+              <option value="custom">Другой срок (укажите ниже)</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="customDurationGroup" style="display:none;">
+            <label for="customDays">Количество дней:</label>
+            <input type="number" id="customDays" min="1" max="1095" placeholder="Например: 45" />
+          </div>
+
+          <div class="form-group">
+            <label for="style">Стиль чтения:</label>
+            <select id="style">
+              <option value="последовательное">Последовательное (с начала до конца)</option>
+              <option value="хронологическое">Хронологическое (по времени событий)</option>
+              <option value="тематическое">Тематическое (по темам)</option>
+              <option value="смешанное">Смешанное (ВЗ + НЗ каждый день)</option>
+              <option value="интенсивное">Интенсивное (много глав в день)</option>
+              <option value="спокойное">Спокойное (1-2 главы в день)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Дополнительные пожелания:</label>
+            <textarea id="notes" placeholder="Например: Хочу читать по 15 минут в день, пропускать субботу, добавить размышления..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-bordered" id="generateBtn">
+            <span class="btn-text">Создать план</span>
+            <div class="spinner" style="display:none;"></div>
+          </button>
+        </form>
+
+        <div class="error" id="errorMsg"></div>
+
+        <div id="loading" style="display:none; text-align:center; margin-top:2rem;">
+          <div class="spinner" style="width:40px;height:40px;border-width:4px;margin:0 auto 1rem;"></div>
+          <p>ИИ составляет ваш персональный план чтения Библии...</p>
+        </div>
+
+        <div class="plan-output" id="planOutput">
+          <div class="motivational-quote" id="motivationalQuote" style="display:none;">
+            <p id="quoteText"></p>
+            <cite id="quoteSource"></cite>
+          </div>
+
+          <div class="reading-streak" id="readingStreak" style="display:none;">
+            <span id="streakText">Серия: 0 дней</span>
+          </div>
+
+          <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+
+          <div class="stats-card" id="statsCard" style="display:none;">
+            <div class="stat-item">
+              <div class="stat-value" id="completedDays">0</div>
+              <div class="stat-label">Дней завершено</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="totalMinutes">0</div>
+              <div class="stat-label">Минут прочитано</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="completionRate">0%</div>
+              <div class="stat-label">Прогресс плана</div>
+            </div>
+          </div>
+
+          <h3 class="plan-title" id="planTitle"></h3>
+          <div class="plan-meta" id="planMeta"></div>
+
+          <ol class="reading-list" id="readingList"></ol>
+
+          <div class="actions">
+            <button class="btn-bordered" id="printBtn">Распечатать</button>
+            <button class="btn-bordered" id="exportBtn">Экспорт в PDF</button>
+            <button class="btn-bordered" id="newPlanBtn">Создать новый план</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal" id="bibleModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">×</button>
+      <h3 id="modalTitle"></h3>
+      <div id="verseContent" class="verse-text"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 БиблияПлан — ИИ помогает читать Писание. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    // === API ===
+    const API = {
+      KEY: atob("Z3NrX1NUelQyS1FFQko3MGNDb1hDSllaV0dkeWIzRlk5OHJHN2xvWXUxSmc1SnV0VFZOSzIyVHY="),
+      URL: "https://api.groq.com/openai/v1/chat/completions",
+      MODEL: "meta-llama/llama-4-maverick-17b-128e-instruct",
+      TEMPERATURE: 0.3,
+      MAX_TOKENS: 2048,
+      MAX_RETRIES: 3
+    };
+    const BIBLE_API = "https://bolls.life/get-chapter/SYNOD/";
+
+    const biblicalQuotes = [
+      { text: "Слово Твое — светильник ноге моей и свет стезе моей", source: "Псалом 118:105" },
+      { text: "Блажен муж, который не ходит на совет нечестивых... но в законе Господа воля его, и о законе Его размышляет он день и ночь", source: "Псалом 1:1-2" },
+      { text: "Все Писание богодухновенно и полезно для научения, для обличения, для исправления, для наставления в праведности", source: "2 Тимофею 3:16" },
+      { text: "Небо и земля прейдут, но слова Мои не прейдут", source: "Матфея 24:35" },
+      { text: "Не хлебом одним будет жить человек, но всяким словом, исходящим из уст Божиих", source: "Матфея 4:4" },
+      { text: "Итак вера от слышания, а слышание от слова Божия", source: "Римлянам 10:17" }
+    ];
+
+    // === DOM ===
+    const form = document.getElementById('planForm');
+    const goalSelect = document.getElementById('goal');
+    const customGoalGroup = document.getElementById('customGoalGroup');
+    const customGoalInput = document.getElementById('customGoal');
+    const durationSelect = document.getElementById('duration');
+    const customDurationGroup = document.getElementById('customDurationGroup');
+    const customDaysInput = document.getElementById('customDays');
+    const generateBtn = document.getElementById('generateBtn');
+    const btnText = generateBtn.querySelector('.btn-text');
+    const spinner = generateBtn.querySelector('.spinner');
+    const loading = document.getElementById('loading');
+    const errorMsg = document.getElementById('errorMsg');
+    const planOutput = document.getElementById('planOutput');
+    const planTitle = document.getElementById('planTitle');
+    const planMeta = document.getElementById('planMeta');
+    const readingList = document.getElementById('readingList');
+    const progressBar = document.getElementById('progressBar');
+    const modal = document.getElementById('bibleModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const verseContent = document.getElementById('verseContent');
+    const closeModal = document.getElementById('closeModal');
+
+    let currentPlan = null;
+    let planId = null;
+
+    // === Модальные окна ===
+    const confirmModal = document.createElement('div');
+    const alertModal = document.createElement('div');
+    document.body.append(confirmModal, alertModal);
+
+    function setupModals() {
+      confirmModal.className = 'modal';
+      confirmModal.innerHTML = `
+        <div class="modal-content" style="max-width: 400px; text-align:center;">
+          <h3 id="confirmTitle">Подтверждение</h3>
+          <p id="confirmMessage" style="margin:1rem 0; color:var(--text-light);"></p>
+          <div style="display:flex; gap:1rem; justify-content:center;">
+            <button class="btn-bordered" id="confirmYes">Да</button>
+            <button class="btn-bordered" id="confirmNo">Отмена</button>
+          </div>
+        </div>
+      `;
+
+      alertModal.className = 'modal';
+      alertModal.innerHTML = `
+        <div class="modal-content" style="max-width: 400px; text-align:center;">
+          <h3>Уведомление</h3>
+          <p id="alertMessage" style="margin:1rem 0; color:var(--text-light);"></p>
+          <button class="btn-bordered" id="alertOk">OK</button>
+        </div>
+      `;
+
+      document.getElementById('confirmNo').onclick = () => confirmModal.classList.remove('show');
+      document.getElementById('alertOk').onclick = () => alertModal.classList.remove('show');
+      confirmModal.onclick = alertModal.onclick = (e) => { if (e.target === confirmModal || e.target === alertModal) e.target.classList.remove('show'); };
+    }
+
+    function showConfirm(title, message, onYes) {
+      document.getElementById('confirmTitle').textContent = title;
+      document.getElementById('confirmMessage').textContent = message;
+      document.getElementById('confirmYes').onclick = () => {
+        confirmModal.classList.remove('show');
+        onYes();
+      };
+      confirmModal.classList.add('show');
+    }
+
+    function showAlert(message) {
+      document.getElementById('alertMessage').textContent = message;
+      alertModal.classList.add('show');
+    }
+
+    // === Инициализация ===
+    window.addEventListener('DOMContentLoaded', () => {
+      setupModals();
+      loadSavedPlans();
+      const lastPlanId = localStorage.getItem('lastActivePlanId');
+      if (lastPlanId) loadPlanById(lastPlanId);
+    });
+
+    // === Форма ===
+    goalSelect.addEventListener('change', () => {
+      customGoalGroup.style.display = goalSelect.value === 'custom' ? 'block' : 'none';
+      if (goalSelect.value !== 'custom') customGoalInput.value = '';
+    });
+
+    durationSelect.addEventListener('change', () => {
+      customDurationGroup.style.display = durationSelect.value === 'custom' ? 'block' : 'none';
+      if (durationSelect.value !== 'custom') customDaysInput.value = '';
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideError();
+
+      let goal = goalSelect.value === 'custom' ? customGoalInput.value.trim() : goalSelect.options[goalSelect.selectedIndex].text;
+      if (!goal) return showError('Укажите цель чтения');
+
+      let days = durationSelect.value === 'custom' ? customDaysInput.value : durationSelect.value.split(' ')[0];
+      days = parseInt(days);
+      if (isNaN(days) || days < 1) return showError('Укажите корректное количество дней');
+
+      const style = document.getElementById('style').options[document.getElementById('style').selectedIndex].text;
+      const notes = document.getElementById('notes').value.trim();
+
+      startLoading();
+      try {
+        currentPlan = await generatePlanWithAI(goal, days, style, notes);
+        planId = Date.now();
+        displayPlan(currentPlan, days);
+        autoSavePlan();
+      } catch (err) {
+        showError('ИИ не ответил. Используется резервный план.');
+        currentPlan = createFallbackPlan(goal, days);
+        planId = Date.now();
+        displayPlan(currentPlan, days);
+        autoSavePlan();
+      } finally {
+        stopLoading();
+      }
+    });
+
+    // === Генерация ===
+    async function generatePlanWithAI(goal, days, style, notes) {
+      const prompt = `Ты — эксперт по Библии. Составь детальный план чтения на ${days} дней.
+Цель: ${goal}
+Стиль: ${style}
+Доп: ${notes || 'Без пожеланий'}
+
+Требования:
+- Раздели на ${days} дней
+- Укажи главы: Быт.1-3, Мф.5
+- Логично, с учётом объёма
+- Название плана
+- Общее кол-во глав, среднее время
+- Для каждого дня: дата (с завтра), главы, минуты
+
+Выведи ТОЛЬКО JSON:
+{
+  "title": "...",
+  "totalChapters": 123,
+  "avgMinutesPerDay": 15,
+  "days": [
+    {
+      "day": 1,
+      "date": "2025-11-05",
+      "readings": ["Быт.1-3"],
+      "minutes": 12
+    }
+  ]
+}`;
+
+      for (let i = 0; i < API.MAX_RETRIES; i++) {
+        try {
+          const res = await fetch(API.URL, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${API.KEY}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              model: API.MODEL,
+              messages: [{ role: 'user', content: prompt }],
+              temperature: API.TEMPERATURE,
+              max_tokens: API.MAX_TOKENS
+            })
+          });
+
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          const raw = data.choices[0].message.content;
+
+          const jsonStr = extractValidJSON(raw);
+          if (!jsonStr) throw new Error("Нет JSON");
+          const plan = JSON.parse(jsonStr);
+          if (!plan.days?.length) throw new Error("Нет дней");
+          return plan;
+        } catch (err) {
+          if (i === API.MAX_RETRIES - 1) throw err;
+          await new Promise(r => setTimeout(r, 1000 * (i + 1)));
+        }
+      }
+    }
+
+    function extractValidJSON(text) {
+      let json = text.replace(/```json\n?/gi, '').replace(/```/g, '').trim();
+      const start = json.indexOf('{');
+      const end = json.lastIndexOf('}');
+      if (start === -1 || end === -1) return null;
+      json = json.slice(start, end + 1);
+      json = json.replace(/,\s*([\]}])/g, '$1');
+      try { JSON.parse(json); return json; } catch { return null; }
+    }
+
+    function createFallbackPlan(goal, days) {
+      const samples = {
+        'Вся Библия': ['Быт.1-3', 'Мф.1', 'Пс.1'],
+        'Новый Завет': ['Мф.1', 'Мк.1', 'Лк.1', 'Ин.1'],
+        'Евангелия': ['Мф.1', 'Мк.1', 'Лк.1', 'Ин.1']
+      };
+      const readings = samples[goal] || ['Быт.1', 'Мф.1'];
+      const perDay = Math.max(1, Math.ceil(readings.length / days));
+      const daysArray = [];
+      for (let d = 1; d <= days; d++) {
+        const start = (d - 1) * perDay;
+        const slice = readings.slice(start, start + perDay).filter(Boolean);
+        if (!slice.length) break;
+        daysArray.push({
+          day: d,
+          date: new Date(Date.now() + d * 86400000).toISOString().split('T')[0],
+          readings: slice,
+          minutes: 15
+        });
+      }
+      return { title: `${goal} за ${days} дней`, totalChapters: readings.length, avgMinutesPerDay: 15, days: daysArray };
+    }
+
+    // === Отображение ===
+    function displayPlan(plan, totalDays) {
+      planOutput.classList.add('show');
+      planTitle.textContent = plan.title || 'Ваш план чтения';
+
+      const randomQuote = biblicalQuotes[Math.floor(Math.random() * biblicalQuotes.length)];
+      document.getElementById('quoteText').textContent = `"${randomQuote.text}"`;
+      document.getElementById('quoteSource').textContent = `— ${randomQuote.source}`;
+      document.getElementById('motivationalQuote').style.display = 'block';
+
+      planMeta.innerHTML = `
+        <div class="meta-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span>${totalDays} дней</span>
+        </div>
+        <div class="meta-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>~${plan.avgMinutesPerDay || 15} мин/день</span>
+        </div>
+        <div class="meta-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>${plan.totalChapters || plan.days.reduce((a,c) => a + c.readings.length, 0)} глав</span>
+        </div>
+      `;
+
+      renderDays(plan);
+      updateProgress();
+    }
+
+    function renderDays(plan) {
+      readingList.innerHTML = '';
+      const saved = loadProgress();
+
+      plan.days.forEach((day, i) => {
+        const li = document.createElement('li');
+        li.className = 'reading-day';
+        li.dataset.day = day.day;
+
+        const date = new Date();
+        date.setDate(date.getDate() + i + 1);
+        const dateStr = date.toLocaleDateString('ru-RU', { weekday: 'short', day: 'numeric', month: 'short' });
+
+        const savedDay = saved.days?.find(d => d.day === day.day) || {};
+        const isCompleted = savedDay.completed;
+        const comment = savedDay.comment || '';
+
+        if (isCompleted) li.classList.add('completed');
+
+        li.innerHTML = `
+          <div class="day-header">
+            <div class="day-number">День ${day.day}</div>
+            <div class="day-date">${dateStr} • ~${day.minutes || 15} мин</div>
+          </div>
+          <div class="day-readings">
+            ${day.readings.map(r => `<span class="reading-tag" data-ref="${r}">${r}</span>`).join('')}
+          </div>
+          <div class="day-actions">
+            <label class="checkbox-label">
+              <input type="checkbox" ${isCompleted ? 'checked' : ''}> Прочитано
+            </label>
+            <button class="btn-bordered btn-small">Мои мысли</button>
+            <button class="btn-bordered btn-small" disabled title="Сначала напишите комментарий">Ответ ИИ</button>
+          </div>
+          <div class="comment-section">
+            <textarea class="comment-textarea" placeholder="Твои мысли, вопросы, открытия...">${comment}</textarea>
+          </div>
+          <div class="ai-insights">
+            <h4>ИИ: контекст и связи</h4>
+            <div class="ai-content"></div>
+          </div>
+        `;
+
+        const checkbox = li.querySelector('input[type="checkbox"]');
+        const commentBtn = li.querySelectorAll('.btn-bordered')[0];
+        const aiBtn = li.querySelectorAll('.btn-bordered')[1];
+        const commentSection = li.querySelector('.comment-section');
+        const textarea = li.querySelector('.comment-textarea');
+        const aiInsights = li.querySelector('.ai-insights');
+        const aiContent = aiInsights.querySelector('.ai-content');
+
+        checkbox.addEventListener('change', () => {
+          li.classList.toggle('completed', checkbox.checked);
+          saveDayProgress(day.day, checkbox.checked, textarea.value);
+          updateProgress();
+        });
+
+        commentBtn.addEventListener('click', () => {
+          commentSection.classList.toggle('show');
+          if (commentSection.classList.contains('show')) {
+            textarea.focus();
+            aiBtn.disabled = !textarea.value.trim();
+          }
+        });
+
+        textarea.addEventListener('input', () => {
+          saveDayProgress(day.day, checkbox.checked, textarea.value);
+          aiBtn.disabled = !textarea.value.trim();
+          aiBtn.title = textarea.value.trim() ? 'Нажмите, чтобы получить ответ ИИ' : 'Сначала напишите комментарий';
+        });
+
+        aiBtn.addEventListener('click', async () => {
+          if (!textarea.value.trim()) return;
+          aiBtn.disabled = true;
+          aiBtn.innerHTML = 'ИИ думает...';
+          try {
+            const insights = await getAIInsights(textarea.value, day.readings);
+            aiContent.innerHTML = insights;
+            aiInsights.classList.add('show');
+          } catch {
+            aiContent.innerHTML = '<p>Ошибка связи с ИИ.</p>';
+          } finally {
+            aiBtn.disabled = false;
+            aiBtn.innerHTML = 'Ответ ИИ';
+          }
+        });
+
+        li.querySelectorAll('.reading-tag').forEach(tag => {
+          tag.addEventListener('click', () => openBibleModal(tag.dataset.ref));
+        });
+
+        readingList.appendChild(li);
+      });
+    }
+
+    // === Библия ===
+    async function openBibleModal(ref) {
+      const match = ref.match(/([А-Яа-яЁё]+)\.?\s*(\d+)(?:-(\d+))?/);
+      if (!match) {
+        verseContent.innerHTML = '<p>Ошибка формата ссылки.</p>';
+        modal.classList.add('show');
+        return;
+      }
+
+      const bookName = match[1];
+      const chStart = parseInt(match[2]);
+      const chEnd = match[3] ? parseInt(match[3]) : chStart;
+
+      const bookNum = getBookNumber(bookName);
+      if (!bookNum) {
+        verseContent.innerHTML = `<p style="color:#f59e0b;">Книга не найдена: ${bookName}</p>`;
+        modal.classList.add('show');
+        return;
+      }
+
+      modalTitle.textContent = `${ref} (Синодальный перевод)`;
+      verseContent.innerHTML = '<p>Загрузка текста...</p>';
+      modal.classList.add('show');
+
+      try {
+        let html = '';
+        for (let ch = chStart; ch <= chEnd; ch++) {
+          const res = await fetch(`${BIBLE_API}${bookNum}/${ch}/`);
+          if (!res.ok) throw new Error();
+          const verses = await res.json();
+          html += `<h4>Глава ${ch}</h4>`;
+          verses.forEach(v => {
+            if (v.verse) html += `<span class="verse-num">${v.verse}</span>${v.text}<br>`;
+          });
+        }
+        verseContent.innerHTML = html || '<p>Текст не найден.</p>';
+      } catch {
+        verseContent.innerHTML = `<p style="color:#f59e0b;">Заглушка (нет сети): "В начале сотворил Бог небо и землю..."</p>`;
+      }
+    }
+
+    function getBookNumber(name) {
+      const map = {
+        'Быт':1, 'Бытие':1, 'Исх':2, 'Исход':2, 'Лев':3, 'Левит':3, 'Чис':4, 'Числа':4,
+        'Втор':5, 'Второзаконие':5, 'Нав':6, 'ИисусНавин':6, 'Суд':7, 'Судьи':7, 'Руфь':8,
+        '1Цар':9, '1Сам':9, '2Цар':10, '2Сам':10, '3Цар':11, '1Царей':11, '4Цар':12, '2Царей':12,
+        '1Пар':13, '1Лет':13, '2Пар':14, '2Лет':14, 'Ездр':15, 'Езд':15, 'Неем':16, 'Неемия':16,
+        'Ест':17, 'Есф':17, 'Иов':18, 'Пс':19, 'Псалом':19, 'Притч':20, 'Прит':20, 'Притчи':20,
+        'Еккл':21, 'Екклесиаст':21, 'Песн':22, 'Песня':22, 'Ис':23, 'Исаия':23, 'Иер':24, 'Иеремия':24,
+        'Плач':25, 'Иез':26, 'Иезекииль':26, 'Дан':27, 'Даниил':27, 'Ос':28, 'Осия':28, 'Иоил':29,
+        'Ам':30, 'Амос':30, 'Авд':31, 'Авдий':31, 'Ион':32, 'Иона':32, 'Мих':33, 'Михей':33,
+        'Наум':34, 'Авв':35, 'Аввакум':35, 'Соф':36, 'Софония':36, 'Агг':37, 'Аггей':37,
+        'Зах':38, 'Захария':38, 'Мал':39, 'Малахия':39, 'Мф':40, 'Матфей':40, 'Мк':41, 'Марк':41,
+        'Лк':42, 'Лука':42, 'Ин':43, 'Иоанн':43, 'Деян':44, 'Рим':45, '1Кор':46, '2Кор':47,
+        'Гал':48, 'Еф':49, 'Ефесянам':49, 'Флп':50, 'Филиппийцам':50, 'Кол':51, '1Фес':52,
+        '2Фес':53, '1Тим':54, '2Тим':55, 'Тит':56, 'Флм':57, 'Евр':58, 'Иак':59, '1Пет':60,
+        '2Пет':61, '1Ин':62, '2Ин':63, '3Ин':64, 'Иуд':65, 'Откр':66, 'Откровение':66
+      };
+      return map[name] || null;
+    }
+
+    async function getAIInsights(comment, readings) {
+      const prompt = `Пользователь прочитал: ${readings.join(', ')}\nЕго комментарий: "${comment}"\n\nДай краткий (2-3 предложения) ответ:\n- Подчеркни главную мысль отрывка\n- Покажи связь с другими текстами Библии\n- Дай практическое применение\n\nБудь кратким, мудрым и ободряющим.`;
+
+      try {
+        const res = await fetch(API.URL, {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${API.KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            model: API.MODEL, 
+            messages: [{ role: 'user', content: prompt }], 
+            temperature: 0.5, 
+            max_tokens: 300 
+          })
+        });
+        const data = await res.json();
+        return data.choices[0].message.content.trim();
+      } catch {
+        return "ИИ временно недоступен. Попробуйте позже.";
+      }
+    }
+
+    // === Прогресс ===
+    function updateProgress() {
+      const saved = loadProgress();
+      const completed = saved.days?.filter(d => d.completed).length || 0;
+      const total = currentPlan?.days.length || 1;
+      const percentage = Math.round(completed / total * 100);
+      
+      progressBar.style.width = percentage + '%';
+      document.getElementById('completedDays').textContent = completed;
+      document.getElementById('completionRate').textContent = percentage + '%';
+      
+      const totalMinutes = saved.days
+        ?.filter(d => d.completed)
+        .reduce((sum, d) => sum + (currentPlan.days.find(pd => pd.day === d.day)?.minutes || 15), 0) || 0;
+      document.getElementById('totalMinutes').textContent = totalMinutes;
+      
+      if (completed > 0) document.getElementById('statsCard').style.display = 'grid';
+      
+      updateStreak(saved.days || []);
+    }
+
+    function updateStreak(days) {
+      const sortedDays = days.filter(d => d.completed).map(d => d.day).sort((a, b) => b - a);
+      let streak = 0;
+      for (let i = 0; i < sortedDays.length; i++) {
+        if (i === 0 || sortedDays[i] === sortedDays[i-1] - 1) streak++;
+        else break;
+      }
+      
+      const streakEl = document.getElementById('readingStreak');
+      const streakText = document.getElementById('streakText');
+      
+      if (streak > 0) {
+        streakEl.style.display = 'inline-flex';
+        streakText.textContent = `Серия: ${streak} ${streak === 1 ? 'день' : streak < 5 ? 'дня' : 'дней'}`;
+        if (streak >= 3) streakEl.classList.add('active');
+      }
+    }
+
+    function saveDayProgress(day, completed, comment) {
+      const saved = loadProgress();
+      const idx = saved.days.findIndex(d => d.day === day);
+      const data = { day, completed, comment: comment.trim() };
+      idx >= 0 ? saved.days[idx] = data : saved.days.push(data);
+      localStorage.setItem(`biblePlan_${planId}`, JSON.stringify(saved));
+      autoSavePlan();
+      updateProgress();
+    }
+
+    function autoSavePlan() {
+      if (!currentPlan || !planId) return;
+      localStorage.setItem(`biblePlanData_${planId}`, JSON.stringify(currentPlan));
+      const plans = JSON.parse(localStorage.getItem('biblePlans') || '[]');
+      const existingIndex = plans.findIndex(p => p.id === planId);
+      const planInfo = {
+        id: planId,
+        title: currentPlan.title,
+        created: existingIndex >= 0 ? plans[existingIndex].created : new Date().toISOString(),
+        updated: new Date().toISOString(),
+        totalDays: currentPlan.days.length
+      };
+      if (existingIndex >= 0) {
+        plans[existingIndex] = planInfo;
+      } else {
+        plans.unshift(planInfo);
+      }
+      localStorage.setItem('biblePlans', JSON.stringify(plans));
+      localStorage.setItem('lastActivePlanId', planId);
+      loadSavedPlans();
+    }
+
+    function loadSavedPlans() {
+      const plans = JSON.parse(localStorage.getItem('biblePlans') || '[]');
+      const section = document.getElementById('savedPlansSection');
+      const list = document.getElementById('savedPlansList');
+      if (plans.length === 0) {
+        section.style.display = 'none';
+        return;
+      }
+      section.style.display = 'block';
+      list.innerHTML = '';
+      plans.forEach(plan => {
+        const progress = getProgressForPlan(plan.id);
+        const item = document.createElement('div');
+        item.className = 'saved-plan-item';
+        const dateStr = new Date(plan.created).toLocaleDateString('ru-RU', { day: 'numeric', month: 'short', year: 'numeric' });
+        item.innerHTML = `
+          <div class="saved-plan-info">
+            <h4>${plan.title}</h4>
+            <p>Создан: ${dateStr} • ${progress.completed}/${progress.total} дней</p>
+          </div>
+          <div class="saved-plan-actions">
+            <button class="btn-bordered btn-small" onclick="loadPlanById(${plan.id})">Открыть</button>
+            <button class="btn-bordered btn-small btn-danger" onclick="deletePlan(${plan.id}, event)">Удалить</button>
+          </div>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    function getProgressForPlan(id) {
+      const saved = JSON.parse(localStorage.getItem(`biblePlan_${id}`) || '{"days":[]}');
+      const planData = JSON.parse(localStorage.getItem(`biblePlanData_${id}`) || '{"days":[]}');
+      return { completed: saved.days?.filter(d => d.completed).length || 0, total: planData.days?.length || 0 };
+    }
+
+    function loadPlanById(id) {
+      const planData = localStorage.getItem(`biblePlanData_${id}`);
+       currentPlan = JSON.parse(planData);
+      planId = id;
+      displayPlan(currentPlan, currentPlan.days.length);
+      document.getElementById('planOutput').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function deletePlan(id, event) {
+      event.stopPropagation();
+      showConfirm('Удалить план?', 'Все данные будут безвозвратно удалены.', () => {
+        localStorage.removeItem(`biblePlan_${id}`);
+        localStorage.removeItem(`biblePlanData_${id}`);
+        const plans = JSON.parse(localStorage.getItem('biblePlans') || '[]');
+        const filtered = plans.filter(p => p.id !== id);
+        localStorage.setItem('biblePlans', JSON.stringify(filtered));
+        if (planId === id) {
+          currentPlan = null;
+          planId = null;
+          planOutput.classList.remove('show');
+          localStorage.removeItem('lastActivePlanId');
+        }
+        loadSavedPlans();
+      });
+    }
+
+    function loadProgress() {
+      return JSON.parse(localStorage.getItem(`biblePlan_${planId}`) || '{"days":[]}');
+    }
+
+    // === UI ===
+    function startLoading() {
+      generateBtn.disabled = true;
+      btnText.textContent = 'ИИ думает...';
+      spinner.style.display = 'block';
+      loading.style.display = 'block';
+      planOutput.classList.remove('show');
+    }
+
+    function stopLoading() {
+      generateBtn.disabled = false;
+      btnText.textContent = 'Создать план';
+      spinner.style.display = 'none';
+      loading.style.display = 'none';
+    }
+
+    function showError(msg) { errorMsg.textContent = msg; errorMsg.classList.add('show'); }
+    function hideError() { errorMsg.classList.remove('show'); }
+
+    closeModal.onclick = () => modal.classList.remove('show');
+    modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('show'); };
+
+    document.getElementById('printBtn').onclick = () => window.print();
+    document.getElementById('exportBtn').onclick = () => exportToPDF();
+    document.getElementById('newPlanBtn').onclick = () => {
+      showConfirm('Создать новый план?', 'Текущий план будет сохранён автоматически.', () => {
+        planOutput.classList.remove('show');
+        form.scrollIntoView({ behavior: 'smooth' });
+      });
+    };
+
+    function exportToPDF() {
+      if (!currentPlan) return;
+      const win = window.open('', '', 'width=800,height=600');
+      const saved = loadProgress();
+      let html = `<h1>${currentPlan.title}</h1><ol>`;
+      currentPlan.days.forEach(d => {
+        const s = saved.days.find(x => x.day === d.day);
+        html += `<li><strong>День ${d.day}:</strong> ${d.readings.join(', ')} ${s?.completed?'Прочитано':''} ${s?.comment?`<br><em>${s.comment}</em>`:''}</li>`;
+      });
+      win.document.write(`<html><head><title>План чтения</title><style>body{font:16px Arial;padding:20px;line-height:1.6;}</style></head><body>${html}</body></html>`);
+      win.document.close();
+      setTimeout(() => win.print(), 500);
+    }
+  </script>
+</body>
+</html>
