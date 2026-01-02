@@ -1,0 +1,2557 @@
+﻿[
+  {
+    "date": "01-01",
+    "old_testament": "Быт. 1:1–2:25",
+    "new_testament": "Мф.1:1–2:12",
+    "psalm": "Пс.1:1–6",
+    "proverbs": "Пр.1:1–6"
+  },
+  {
+    "date": "01-02",
+    "old_testament": "Быт. 3:1–4:26",
+    "new_testament": "Мф.2:13–3:6",
+    "psalm": "Пс.2:1–12",
+    "proverbs": "Пр.1:7–9"
+  },
+  {
+    "date": "01-03",
+    "old_testament": "Быт. 5:1–7:24",
+    "new_testament": "Мф.3:7–4:11",
+    "psalm": "Пс.3:1–9",
+    "proverbs": "Пр.1:10–19"
+  },
+  {
+    "date": "01-04",
+    "old_testament": "Быт. 8:1–10:32",
+    "new_testament": "Мф.4:12–25",
+    "psalm": "Пс.4:1–9",
+    "proverbs": "Пр.1:20–23"
+  },
+  {
+    "date": "01-05",
+    "old_testament": "Быт. 11:1–13:4",
+    "new_testament": "Мф.5:1–26",
+    "psalm": "Пс.5:1–13",
+    "proverbs": "Пр.1:24–28"
+  },
+  {
+    "date": "01-06",
+    "old_testament": "Быт. 13:5–15:21",
+    "new_testament": "Мф.5:27–48",
+    "psalm": "Пс.6:1–11",
+    "proverbs": "Пр.1:29–33"
+  },
+  {
+    "date": "01-07",
+    "old_testament": "Быт. 16:1–18:15",
+    "new_testament": "Мф.6:1–24",
+    "psalm": "Пс.7:1–18",
+    "proverbs": "Пр.2:1–5"
+  },
+  {
+    "date": "01-08",
+    "old_testament": "Быт. 18:16–19:38",
+    "new_testament": "Мф.6:25–7:14",
+    "psalm": "Пс.8:1–10",
+    "proverbs": "Пр.2:6–15"
+  },
+  {
+    "date": "01-09",
+    "old_testament": "Быт. 20:1–22:24",
+    "new_testament": "Мф.7:15–29",
+    "psalm": "Пс.9:1–13",
+    "proverbs": "Пр.2:16–22"
+  },
+  {
+    "date": "01-10",
+    "old_testament": "Быт. 23:1–24:51",
+    "new_testament": "Мф.8:1–17",
+    "psalm": "Пс.9:14–21",
+    "proverbs": "Пр.3:1–6"
+  },
+  {
+    "date": "01-11",
+    "old_testament": "Быт. 24:52–26:16",
+    "new_testament": "Мф.8:18–34",
+    "psalm": "Пс.9:22–36",
+    "proverbs": "Пр.3:7–8"
+  },
+  {
+    "date": "01-12",
+    "old_testament": "Быт. 26:17–27:46",
+    "new_testament": "Мф.9:1–17",
+    "psalm": "Пс.9:37–39",
+    "proverbs": "Пр.3:9–10"
+  },
+  {
+    "date": "01-13",
+    "old_testament": "Быт. 28:1–29:35",
+    "new_testament": "Мф.9:18–38",
+    "psalm": "Пс.10:1–7",
+    "proverbs": "Пр.3:11–12"
+  },
+  {
+    "date": "01-14",
+    "old_testament": "Быт. 30:1–31:16",
+    "new_testament": "Мф.10:1–23",
+    "psalm": "Пс.11:1–9",
+    "proverbs": "Пр.3:13–15"
+  },
+  {
+    "date": "01-15",
+    "old_testament": "Быт. 31:17–32:12",
+    "new_testament": "Мф.10:24–11:6",
+    "psalm": "Пс.12:1–6",
+    "proverbs": "Пр.3:16–18"
+  },
+  {
+    "date": "01-16",
+    "old_testament": "Быт. 32:13–34:31",
+    "new_testament": "Мф.11:7–30",
+    "psalm": "Пс.13:1–7",
+    "proverbs": "Пр.3:19–20"
+  },
+  {
+    "date": "01-17",
+    "old_testament": "Быт. 35:1–36:43",
+    "new_testament": "Мф.12:1–21",
+    "psalm": "Пс.14:1–5",
+    "proverbs": "Пр.3:21–26"
+  },
+  {
+    "date": "01-18",
+    "old_testament": "Быт. 37:1–38:30",
+    "new_testament": "Мф.12:22–45",
+    "psalm": "Пс.15:1–11",
+    "proverbs": "Пр.3:27–32"
+  },
+  {
+    "date": "01-19",
+    "old_testament": "Быт. 39:1–41:16",
+    "new_testament": "Мф.12:46–13:23",
+    "psalm": "Пс.16:1–15",
+    "proverbs": "Пр.3:33–35"
+  },
+  {
+    "date": "01-20",
+    "old_testament": "Быт. 41:17–42:17",
+    "new_testament": "Мф.13:24–46",
+    "psalm": "Пс.17:1–16",
+    "proverbs": "Пр.4:1–6"
+  },
+  {
+    "date": "01-21",
+    "old_testament": "Быт. 42:18–43:34",
+    "new_testament": "Мф.13:47–14:12",
+    "psalm": "Пс.17:17–37",
+    "proverbs": "Пр.4:7–10"
+  },
+  {
+    "date": "01-22",
+    "old_testament": "Быт. 44:1–45:28",
+    "new_testament": "Мф.14:13–36",
+    "psalm": "Пс.17:38–51",
+    "proverbs": "Пр.4:11–13"
+  },
+  {
+    "date": "01-23",
+    "old_testament": "Быт. 46:1–47:31",
+    "new_testament": "Мф.15:1–28",
+    "psalm": "Пс.18:1–15",
+    "proverbs": "Пр.4:14–19"
+  },
+  {
+    "date": "01-24",
+    "old_testament": "Быт. 48:1–49:33",
+    "new_testament": "Мф.15:29–16:12",
+    "psalm": "Пс.19:1–10",
+    "proverbs": "Пр.4:20–27"
+  },
+  {
+    "date": "01-25",
+    "old_testament": "Быт. 50:1 – Исх. 2:10",
+    "new_testament": "Мф.16:13–17:9",
+    "psalm": "Пс.20:1–14",
+    "proverbs": "Пр.5:1–6"
+  },
+  {
+    "date": "01-26",
+    "old_testament": "Исх. 2:11–3:22",
+    "new_testament": "Мф.17:10–27",
+    "psalm": "Пс.21:1–19",
+    "proverbs": "Пр.5:7–14"
+  },
+  {
+    "date": "01-27",
+    "old_testament": "Исх. 4:1–5:21",
+    "new_testament": "Мф.18:1–20",
+    "psalm": "Пс.21:20–32",
+    "proverbs": "Пр.5:15–21"
+  },
+  {
+    "date": "01-28",
+    "old_testament": "Исх. 5:22–7:25",
+    "new_testament": "Мф.18:21–19:12",
+    "psalm": "Пс.22:1–6",
+    "proverbs": "Пр.5:22–23"
+  },
+  {
+    "date": "01-29",
+    "old_testament": "Исх. 8:1–9:35",
+    "new_testament": "Мф.19:13–30",
+    "psalm": "Пс.23:1–10",
+    "proverbs": "Пр.6:1–5"
+  },
+  {
+    "date": "01-30",
+    "old_testament": "Исх. 10:1–12:13",
+    "new_testament": "Мф.20:1–28",
+    "psalm": "Пс.24:1–15",
+    "proverbs": "Пр.6:6–11"
+  },
+  {
+    "date": "02-31",
+    "old_testament": "Исх. 12:14–13:16",
+    "new_testament": "Мф.20:29–21:22",
+    "psalm": "Пс.24:16–22",
+    "proverbs": "Пр.6:12–15"
+  },
+  {
+    "date": "02-01",
+    "old_testament": "Исх. 13:17–15:18",
+    "new_testament": "Мф.21:23–46",
+    "psalm": "Пс.25:1–12",
+    "proverbs": "Пр.6:16–19"
+  },
+  {
+    "date": "02-02",
+    "old_testament": "Исх. 15:19–17:7",
+    "new_testament": "Мф.22:1–33",
+    "psalm": "Пс.26:1–6",
+    "proverbs": "Пр.6:20–26"
+  },
+  {
+    "date": "02-03",
+    "old_testament": "Исх. 17:8–19:15",
+    "new_testament": "Мф.22:34–23:12",
+    "psalm": "Пс.26:7–14",
+    "proverbs": "Пр.6:27–35"
+  },
+  {
+    "date": "02-04",
+    "old_testament": "Исх. 19:16–21:21",
+    "new_testament": "Мф.23:13–39",
+    "psalm": "Пс.27:1–9",
+    "proverbs": "Пр.7:1–5"
+  },
+  {
+    "date": "02-05",
+    "old_testament": "Исх. 21:22–23:13",
+    "new_testament": "Мф.24:1–28",
+    "psalm": "Пс.28:1–11",
+    "proverbs": "Пр.7:6–23"
+  },
+  {
+    "date": "02-06",
+    "old_testament": "Исх. 23:14–25:40",
+    "new_testament": "Мф.24:29–51",
+    "psalm": "Пс.29:1–13",
+    "proverbs": "Пр.7:24–27"
+  },
+  {
+    "date": "02-07",
+    "old_testament": "Исх. 26:1–27:21",
+    "new_testament": "Мф.25:1–30",
+    "psalm": "Пс.30:1–8",
+    "proverbs": "Пр.8:1–11"
+  },
+  {
+    "date": "02-08",
+    "old_testament": "Исх. 28:1–43",
+    "new_testament": "Мф.25:31–26:13",
+    "psalm": "Пс.30:9–18",
+    "proverbs": "Пр.8:12–13"
+  },
+  {
+    "date": "02-09",
+    "old_testament": "Исх. 29:1–30:10",
+    "new_testament": "Мф.26:14–46",
+    "psalm": "Пс.30:19–25",
+    "proverbs": "Пр.8:14–26"
+  },
+  {
+    "date": "02-10",
+    "old_testament": "Исх. 30:11–31:18",
+    "new_testament": "Мф.26:47–68",
+    "psalm": "Пс.31:1–11",
+    "proverbs": "Пр.8:27–32"
+  },
+  {
+    "date": "02-11",
+    "old_testament": "Исх. 32:1–33:23",
+    "new_testament": "Мф.26:69–27:14",
+    "psalm": "Пс.32:1–11",
+    "proverbs": "Пр.8:33–36"
+  },
+  {
+    "date": "02-12",
+    "old_testament": "Исх. 34:1–35:9",
+    "new_testament": "Мф.27:15–31",
+    "psalm": "Пс.32:12–22",
+    "proverbs": "Пр.9:1–6"
+  },
+  {
+    "date": "02-13",
+    "old_testament": "Исх. 35:10–36:38",
+    "new_testament": "Мф.27:32–66",
+    "psalm": "Пс.33:1–10",
+    "proverbs": "Пр.9:7–8"
+  },
+  {
+    "date": "02-14",
+    "old_testament": "Исх. 37:1–38:31",
+    "new_testament": "Мф.28:1–20",
+    "psalm": "Пс.33:11–23",
+    "proverbs": "Пр.9:9–10"
+  },
+  {
+    "date": "02-15",
+    "old_testament": "Исх. 39:1–40:38",
+    "new_testament": "Мк. 1:1–28",
+    "psalm": "Пс.34:1–16",
+    "proverbs": "Пр.9:11–12"
+  },
+  {
+    "date": "02-16",
+    "old_testament": "Лев.1:1–3:17",
+    "new_testament": "Мк. 1:29–2:12",
+    "psalm": "Пс.34:17–28",
+    "proverbs": "Пр.9:13–18"
+  },
+  {
+    "date": "02-17",
+    "old_testament": "Лев.4:1–5:19",
+    "new_testament": "Мк. 2:13–3:6",
+    "psalm": "Пс.35:1–13",
+    "proverbs": "Пр.10:1–2"
+  },
+  {
+    "date": "02-18",
+    "old_testament": "Лев.6:1–7:27",
+    "new_testament": "Мк. 3:7–30",
+    "psalm": "Пс.36:1–11",
+    "proverbs": "Пр.10:3–4"
+  },
+  {
+    "date": "02-19",
+    "old_testament": "Лев.7:28–9:6",
+    "new_testament": "Мк. 3:31–4:25",
+    "psalm": "Пс.36:12–29",
+    "proverbs": "Пр.10:5"
+  },
+  {
+    "date": "02-20",
+    "old_testament": "Лев.9:7–10:20",
+    "new_testament": "Мк. 4:26–5:20",
+    "psalm": "Пс.36:30–40",
+    "proverbs": "Пр.10:6–7"
+  },
+  {
+    "date": "02-21",
+    "old_testament": "Лев.11:1–12:8",
+    "new_testament": "Мк. 5:21–43",
+    "psalm": "Пс.37:1–23",
+    "proverbs": "Пр.10:8–9"
+  },
+  {
+    "date": "02-22",
+    "old_testament": "Лев.13:1–59",
+    "new_testament": "Мк. 6:1–29",
+    "psalm": "Пс.38:1–14",
+    "proverbs": "Пр.10:10"
+  },
+  {
+    "date": "02-23",
+    "old_testament": "Лев.14:1–56",
+    "new_testament": "Мк. 6:30–56",
+    "psalm": "Пс.39:1–10",
+    "proverbs": "Пр.10:11–12"
+  },
+  {
+    "date": "02-24",
+    "old_testament": "Лев.15:1–16:28",
+    "new_testament": "Мк. 7:1–23",
+    "psalm": "Пс.39:11–18",
+    "proverbs": "Пр.10:13–14"
+  },
+  {
+    "date": "02-25",
+    "old_testament": "Лев.16:29–18:30",
+    "new_testament": "Мк. 7:24–8:10",
+    "psalm": "Пс.40:1–14",
+    "proverbs": "Пр.10:15–16"
+  },
+  {
+    "date": "02-26",
+    "old_testament": "Лев.19:1–20:21",
+    "new_testament": "Мк. 8:11–38",
+    "psalm": "Пс.41:1–12",
+    "proverbs": "Пр.10:17"
+  },
+  {
+    "date": "02-27",
+    "old_testament": "Лев.20:22–22:16",
+    "new_testament": "Мк. 9:1–29",
+    "psalm": "Пс.42:1–5",
+    "proverbs": "Пр.10:18"
+  },
+  {
+    "date": "03-28",
+    "old_testament": "Лев.22:17–23:44",
+    "new_testament": "Мк. 9:30–10:12",
+    "psalm": "Пс.43:1–8",
+    "proverbs": "Пр.10:19"
+  },
+  {
+    "date": "03-01",
+    "old_testament": "Лев.24:1–25:46",
+    "new_testament": "Мк. 10:13–31",
+    "psalm": "Пс.43:9–27",
+    "proverbs": "Пр.10:20–21"
+  },
+  {
+    "date": "03-02",
+    "old_testament": "Лев.25:47–27:13",
+    "new_testament": "Мк. 10:32–52",
+    "psalm": "Пс.44:1–18",
+    "proverbs": "Пр.10:22"
+  },
+  {
+    "date": "03-03",
+    "old_testament": "Лев.27:14 – Чис. 1:54",
+    "new_testament": "Мк. 11:1–26",
+    "psalm": "Пс.45:1–12",
+    "proverbs": "Пр.10:23"
+  },
+  {
+    "date": "03-04",
+    "old_testament": "Чис. 2:1–3:51",
+    "new_testament": "Мк. 11:27–12:17",
+    "psalm": "Пс.46:1–10",
+    "proverbs": "Пр.10:24–25"
+  },
+  {
+    "date": "03-05",
+    "old_testament": "Чис. 4:1–5:31",
+    "new_testament": "Мк. 12:18–37",
+    "psalm": "Пс.47:1–15",
+    "proverbs": "Пр.10:26"
+  },
+  {
+    "date": "03-06",
+    "old_testament": "Чис. 6:1–7:89",
+    "new_testament": "Мк. 12:38–13:13",
+    "psalm": "Пс.48:1–21",
+    "proverbs": "Пр.10:27–28"
+  },
+  {
+    "date": "03-07",
+    "old_testament": "Чис. 8:1–9:23",
+    "new_testament": "Мк. 13:14–37",
+    "psalm": "Пс.49:1–23",
+    "proverbs": "Пр.10:29–30"
+  },
+  {
+    "date": "03-08",
+    "old_testament": "Чис. 10:1–11:23",
+    "new_testament": "Мк. 14:1–21",
+    "psalm": "Пс.50:1–21",
+    "proverbs": "Пр.10:31–32"
+  },
+  {
+    "date": "03-09",
+    "old_testament": "Чис. 11:24–13:34",
+    "new_testament": "Мк. 14:22–52",
+    "psalm": "Пс.51:1–11",
+    "proverbs": "Пр.11:1–3"
+  },
+  {
+    "date": "03-10",
+    "old_testament": "Чис. 14:1–15:16",
+    "new_testament": "Мк. 14:53–72",
+    "psalm": "Пс.52:1–7",
+    "proverbs": "Пр.11:4"
+  },
+  {
+    "date": "03-11",
+    "old_testament": "Чис. 15:17–16:40",
+    "new_testament": "Мк. 15:1–47",
+    "psalm": "Пс.53:1–9",
+    "proverbs": "Пр.11:5–6"
+  },
+  {
+    "date": "03-12",
+    "old_testament": "Чис. 16:41–18:32",
+    "new_testament": "Мк. 16:1–20",
+    "psalm": "Пс.54:1–24",
+    "proverbs": "Пр.11:7"
+  },
+  {
+    "date": "03-13",
+    "old_testament": "Чис. 19:1–20:29",
+    "new_testament": "Лк.1:1–25",
+    "psalm": "Пс.55:1–14",
+    "proverbs": "Пр.11:8"
+  },
+  {
+    "date": "03-14",
+    "old_testament": "Чис. 21:1–22:20",
+    "new_testament": "Лк.1:26–56",
+    "psalm": "Пс.56:1–12",
+    "proverbs": "Пр.11:9–11"
+  },
+  {
+    "date": "03-15",
+    "old_testament": "Чис. 22:21–23:30",
+    "new_testament": "Лк.1:57–80",
+    "psalm": "Пс.57:1–12",
+    "proverbs": "Пр.11:12–13"
+  },
+  {
+    "date": "03-16",
+    "old_testament": "Чис. 24:1–25:18",
+    "new_testament": "Лк.2:1–35",
+    "psalm": "Пс.58:1–18",
+    "proverbs": "Пр.11:14"
+  },
+  {
+    "date": "03-17",
+    "old_testament": "Чис. 26:1–51",
+    "new_testament": "Лк.2:36–52",
+    "psalm": "Пс.59:1–14",
+    "proverbs": "Пр.11:15"
+  },
+  {
+    "date": "03-18",
+    "old_testament": "Чис. 26:52–28:15",
+    "new_testament": "Лк.3:1–22",
+    "psalm": "Пс.60:1–9",
+    "proverbs": "Пр.11:16–17"
+  },
+  {
+    "date": "03-19",
+    "old_testament": "Чис. 28:16–29:40",
+    "new_testament": "Лк.3:23–38",
+    "psalm": "Пс.61:1–13",
+    "proverbs": "Пр.11:18–19"
+  },
+  {
+    "date": "03-20",
+    "old_testament": "Чис. 30:1–31:54",
+    "new_testament": "Лк.4:1–30",
+    "psalm": "Пс.62:1–12",
+    "proverbs": "Пр.11:20–21"
+  },
+  {
+    "date": "03-21",
+    "old_testament": "Чис. 32:1–33:39",
+    "new_testament": "Лк.4:31–5:11",
+    "psalm": "Пс.63:1–11",
+    "proverbs": "Пр.11:22"
+  },
+  {
+    "date": "03-22",
+    "old_testament": "Чис. 33:40–35:34",
+    "new_testament": "Лк.5:12–28",
+    "psalm": "Пс.64:1–14",
+    "proverbs": "Пр.11:23"
+  },
+  {
+    "date": "03-23",
+    "old_testament": "Чис. 36:1 – Втор. 1:46",
+    "new_testament": "Лк.5:29–6:11",
+    "psalm": "Пс.65:1–20",
+    "proverbs": "Пр.11:24–26"
+  },
+  {
+    "date": "03-24",
+    "old_testament": "Втор. 2:1–3:29",
+    "new_testament": "Лк.6:12–38",
+    "psalm": "Пс.66:1–8",
+    "proverbs": "Пр.11:27"
+  },
+  {
+    "date": "03-25",
+    "old_testament": "Втор. 4:1–49",
+    "new_testament": "Лк.6:39–7:10",
+    "psalm": "Пс.67:1–18",
+    "proverbs": "Пр.11:28"
+  },
+  {
+    "date": "03-26",
+    "old_testament": "Втор. 5:1–6:25",
+    "new_testament": "Лк.7:11–35",
+    "psalm": "Пс.67:19–36",
+    "proverbs": "Пр.11:29–31"
+  },
+  {
+    "date": "03-27",
+    "old_testament": "Втор. 7:1–8:20",
+    "new_testament": "Лк.7:36–8:3",
+    "psalm": "Пс.68:1–18",
+    "proverbs": "Пр.12:1"
+  },
+  {
+    "date": "03-28",
+    "old_testament": "Втор. 9:1–10:22",
+    "new_testament": "Лк.8:4–21",
+    "psalm": "Пс.68:19–37",
+    "proverbs": "Пр.12:2–3"
+  },
+  {
+    "date": "03-29",
+    "old_testament": "Втор. 11:1–12:32",
+    "new_testament": "Лк.8:22–39",
+    "psalm": "Пс.69:1–6",
+    "proverbs": "Пр.12:4"
+  },
+  {
+    "date": "03-30",
+    "old_testament": "Втор. 13:1–15:23",
+    "new_testament": "Лк.8:40–9:6",
+    "psalm": "Пс.70:1–24",
+    "proverbs": "Пр.12:5–7"
+  },
+  {
+    "date": "04-31",
+    "old_testament": "Втор. 16:1–17:20",
+    "new_testament": "Лк.9:7–27",
+    "psalm": "Пс.71:1–20",
+    "proverbs": "Пр.12:8–9"
+  },
+  {
+    "date": "04-01",
+    "old_testament": "Втор. 18:1–20:20",
+    "new_testament": "Лк.9:28–50",
+    "psalm": "Пс.72:1–28",
+    "proverbs": "Пр.12:10"
+  },
+  {
+    "date": "04-02",
+    "old_testament": "Втор. 21:1–22:30",
+    "new_testament": "Лк.9:51–10:12",
+    "psalm": "Пс.73:1–23",
+    "proverbs": "Пр.12:11"
+  },
+  {
+    "date": "04-03",
+    "old_testament": "Втор. 23:1–25:19",
+    "new_testament": "Лк.10:13–37",
+    "psalm": "Пс.74:1–11",
+    "proverbs": "Пр.12:12–14"
+  },
+  {
+    "date": "04-04",
+    "old_testament": "Втор. 26:1–27:26",
+    "new_testament": "Лк.10:38–11:13",
+    "psalm": "Пс.75:1–13",
+    "proverbs": "Пр.12:15–17"
+  },
+  {
+    "date": "04-05",
+    "old_testament": "Втор. 28:1–68",
+    "new_testament": "Лк.11:14–36",
+    "psalm": "Пс.76:1–21",
+    "proverbs": "Пр.12:18"
+  },
+  {
+    "date": "04-06",
+    "old_testament": "Втор. 29:1–30:20",
+    "new_testament": "Лк.11:37–12:7",
+    "psalm": "Пс.77:1–31",
+    "proverbs": "Пр.12:19–20"
+  },
+  {
+    "date": "04-07",
+    "old_testament": "Втор. 31:1–32:27",
+    "new_testament": "Лк.12:8–34",
+    "psalm": "Пс.77:32–55",
+    "proverbs": "Пр.12:21–23"
+  },
+  {
+    "date": "04-08",
+    "old_testament": "Втор. 32:28–52",
+    "new_testament": "Лк.12:35–59",
+    "psalm": "Пс.77:56–64",
+    "proverbs": "Пр.12:24"
+  },
+  {
+    "date": "04-09",
+    "old_testament": "Втор. 33:1–29",
+    "new_testament": "Лк.13:1–21",
+    "psalm": "Пс.77:65–72",
+    "proverbs": "Пр.12:25"
+  },
+  {
+    "date": "04-10",
+    "old_testament": "Втор. 34:1 – Нав.2:24",
+    "new_testament": "Лк.13:22–14:6",
+    "psalm": "Пс.78:1–13",
+    "proverbs": "Пр.12:26"
+  },
+  {
+    "date": "04-11",
+    "old_testament": "Нав.3:1–4:24",
+    "new_testament": "Лк.14:7–35",
+    "psalm": "Пс.79:1–20",
+    "proverbs": "Пр.12:27–28"
+  },
+  {
+    "date": "04-12",
+    "old_testament": "Нав.5:1–7:15",
+    "new_testament": "Лк.15:1–32",
+    "psalm": "Пс.80:1–17",
+    "proverbs": "Пр.13:1"
+  },
+  {
+    "date": "04-13",
+    "old_testament": "Нав.7:16–9:2",
+    "new_testament": "Лк.16:1–18",
+    "psalm": "Пс.81:1–8",
+    "proverbs": "Пр.13:2–3"
+  },
+  {
+    "date": "04-14",
+    "old_testament": "Нав.9:3–10:43",
+    "new_testament": "Лк.16:19–17:10",
+    "psalm": "Пс.82:1–19",
+    "proverbs": "Пр.13:4"
+  },
+  {
+    "date": "04-15",
+    "old_testament": "Нав.11:1–12:24",
+    "new_testament": "Лк.17:11–37",
+    "psalm": "Пс.83:1–13",
+    "proverbs": "Пр.13:5–6"
+  },
+  {
+    "date": "04-16",
+    "old_testament": "Нав.13:1–14:15",
+    "new_testament": "Лк.18:1–17",
+    "psalm": "Пс.84:1–14",
+    "proverbs": "Пр.13:7–8"
+  },
+  {
+    "date": "04-17",
+    "old_testament": "Нав.15:1–63",
+    "new_testament": "Лк.18:18–43",
+    "psalm": "Пс.85:1–17",
+    "proverbs": "Пр.13:9–10"
+  },
+  {
+    "date": "04-18",
+    "old_testament": "Нав.16:1–18:28",
+    "new_testament": "Лк.19:1–27",
+    "psalm": "Пс.86:1–7",
+    "proverbs": "Пр.13:11"
+  },
+  {
+    "date": "04-19",
+    "old_testament": "Нав.19:1–20:9",
+    "new_testament": "Лк.19:28–48",
+    "psalm": "Пс.87:1–19",
+    "proverbs": "Пр.13:12–14"
+  },
+  {
+    "date": "04-20",
+    "old_testament": "Нав.21:1–22:20",
+    "new_testament": "Лк.20:1–26",
+    "psalm": "Пс.88:1–13",
+    "proverbs": "Пр.13:15–16"
+  },
+  {
+    "date": "04-21",
+    "old_testament": "Нав.22:21–23:16",
+    "new_testament": "Лк.20:27–47",
+    "psalm": "Пс.88:14–37",
+    "proverbs": "Пр.13:17–19"
+  },
+  {
+    "date": "04-22",
+    "old_testament": "Нав.24:1–36",
+    "new_testament": "Лк.21:1–28",
+    "psalm": "Пс.88:38–53",
+    "proverbs": "Пр.13:20–23"
+  },
+  {
+    "date": "04-23",
+    "old_testament": "Суд. 1:1–2:9",
+    "new_testament": "Лк.21:29–22:13",
+    "psalm": "Пс.89:1–90:16",
+    "proverbs": "Пр.13:24–26"
+  },
+  {
+    "date": "04-24",
+    "old_testament": "Суд. 2:10–3:31",
+    "new_testament": "Лк.22:14–34",
+    "psalm": "Пс.91:1–92:5",
+    "proverbs": "Пр.14:1–2"
+  },
+  {
+    "date": "04-25",
+    "old_testament": "Суд. 4:1–5:31",
+    "new_testament": "Лк.22:35–53",
+    "psalm": "Пс.93:1–23",
+    "proverbs": "Пр.14:3–4"
+  },
+  {
+    "date": "04-26",
+    "old_testament": "Суд. 6:1–40",
+    "new_testament": "Лк.22:54–23:12",
+    "psalm": "Пс.94:1–95:13",
+    "proverbs": "Пр.14:5–6"
+  },
+  {
+    "date": "04-27",
+    "old_testament": "Суд. 7:1–8:17",
+    "new_testament": "Лк.23:13–43",
+    "psalm": "Пс.96:1–97:9",
+    "proverbs": "Пр.14:7–8"
+  },
+  {
+    "date": "04-28",
+    "old_testament": "Суд. 8:18–9:21",
+    "new_testament": "Лк.23:44–24:12",
+    "psalm": "Пс.98:1–9",
+    "proverbs": "Пр.14:9–10"
+  },
+  {
+    "date": "04-29",
+    "old_testament": "Суд. 9:22–10:18",
+    "new_testament": "Лк.24:13–53",
+    "psalm": "Пс.99:1–5",
+    "proverbs": "Пр.14:11–12"
+  },
+  {
+    "date": "05-30",
+    "old_testament": "Суд. 11:1–12:15",
+    "new_testament": "Ин. 1:1–28",
+    "psalm": "Пс.100:1–8",
+    "proverbs": "Пр.14:13–14"
+  },
+  {
+    "date": "05-01",
+    "old_testament": "Суд. 13:1–14:20",
+    "new_testament": "Ин. 1:29–51",
+    "psalm": "Пс.101:1–29",
+    "proverbs": "Пр.14:15–16"
+  },
+  {
+    "date": "05-02",
+    "old_testament": "Суд. 15:1–16:31",
+    "new_testament": "Ин. 2:1–25",
+    "psalm": "Пс.102:1–22",
+    "proverbs": "Пр.14:17–19"
+  },
+  {
+    "date": "05-03",
+    "old_testament": "Суд. 17:1–18:31",
+    "new_testament": "Ин. 3:1–21",
+    "psalm": "Пс.103:1–24",
+    "proverbs": "Пр.14:20–21"
+  },
+  {
+    "date": "05-04",
+    "old_testament": "Суд. 19:1–20:48",
+    "new_testament": "Ин. 3:22–4:3",
+    "psalm": "Пс.103:24–35",
+    "proverbs": "Пр.14:22–24"
+  },
+  {
+    "date": "05-05",
+    "old_testament": "Суд. 21:1 – Руфь 1:22",
+    "new_testament": "Ин. 4:4–42",
+    "psalm": "Пс.104:1–15",
+    "proverbs": "Пр.14:25"
+  },
+  {
+    "date": "05-06",
+    "old_testament": "Руфь 2:1–4:22",
+    "new_testament": "Ин. 4:43–54",
+    "psalm": "Пс.104:16–36",
+    "proverbs": "Пр.14:26–27"
+  },
+  {
+    "date": "05-07",
+    "old_testament": "1 Цар. 1:1–2:21",
+    "new_testament": "Ин. 5:1–23",
+    "psalm": "Пс.104:37–45",
+    "proverbs": "Пр.14:28–29"
+  },
+  {
+    "date": "05-08",
+    "old_testament": "1 Цар. 2:22–4:22",
+    "new_testament": "Ин. 5:24–47",
+    "psalm": "Пс.105:1–12",
+    "proverbs": "Пр.14:30–31"
+  },
+  {
+    "date": "05-09",
+    "old_testament": "1 Цар. 5:1–7:17",
+    "new_testament": "Ин. 6:1–21",
+    "psalm": "Пс.105:13–31",
+    "proverbs": "Пр.14:32–33"
+  },
+  {
+    "date": "05-10",
+    "old_testament": "1 Цар. 8:1–9:27",
+    "new_testament": "Ин. 6:22–42",
+    "psalm": "Пс.105:32–48",
+    "proverbs": "Пр.14:34–35"
+  },
+  {
+    "date": "05-11",
+    "old_testament": "1 Цар. 10:1–11:15",
+    "new_testament": "Ин. 6:43–71",
+    "psalm": "Пс.106:1–43",
+    "proverbs": "Пр.15:1–3"
+  },
+  {
+    "date": "05-12",
+    "old_testament": "1 Цар. 12:1–13:23",
+    "new_testament": "Ин. 7:1–30",
+    "psalm": "Пс.107:1–14",
+    "proverbs": "Пр.15:4"
+  },
+  {
+    "date": "05-13",
+    "old_testament": "1 Цар. 14:1–52",
+    "new_testament": "Ин. 7:31–53",
+    "psalm": "Пс.108:1–31",
+    "proverbs": "Пр.15:5–7"
+  },
+  {
+    "date": "05-14",
+    "old_testament": "1 Цар. 15:1–16:23",
+    "new_testament": "Ин. 8:1–20",
+    "psalm": "Пс.109:1–7",
+    "proverbs": "Пр.15:8–10"
+  },
+  {
+    "date": "05-15",
+    "old_testament": "1 Цар. 17:1–18:4",
+    "new_testament": "Ин. 8:21–30",
+    "psalm": "Пс.110:1–10",
+    "proverbs": "Пр.15:11"
+  },
+  {
+    "date": "05-16",
+    "old_testament": "1 Цар. 18:5–19:24",
+    "new_testament": "Ин. 8:31–59",
+    "psalm": "Пс.111:1–10",
+    "proverbs": "Пр.15:12–14"
+  },
+  {
+    "date": "05-17",
+    "old_testament": "1 Цар. 20:1–21:15",
+    "new_testament": "Ин. 9:1–41",
+    "psalm": "Пс.112:1–113:8",
+    "proverbs": "Пр.15:15–17"
+  },
+  {
+    "date": "05-18",
+    "old_testament": "1 Цар. 22:1–23:29",
+    "new_testament": "Ин. 10:1–21",
+    "psalm": "Пс.113:9–26",
+    "proverbs": "Пр.15:18–19"
+  },
+  {
+    "date": "05-19",
+    "old_testament": "1 Цар. 24:1–25:44",
+    "new_testament": "Ин. 10:22–42",
+    "psalm": "Пс.114:1–115:10",
+    "proverbs": "Пр.15:20–21"
+  },
+  {
+    "date": "05-20",
+    "old_testament": "1 Цар. 26:1–28:25",
+    "new_testament": "Ин. 11:1–54",
+    "psalm": "Пс.116:1–2",
+    "proverbs": "Пр.15:22–23"
+  },
+  {
+    "date": "05-21",
+    "old_testament": "1 Цар. 29:1–31:13",
+    "new_testament": "Ин. 11:55–12:19",
+    "psalm": "Пс.117:1–18",
+    "proverbs": "Пр.15:24–26"
+  },
+  {
+    "date": "05-22",
+    "old_testament": "2 Цар. 1:1–2:11",
+    "new_testament": "Ин. 12:20–50",
+    "psalm": "Пс.117:19–29",
+    "proverbs": "Пр.15:27–28"
+  },
+  {
+    "date": "05-23",
+    "old_testament": "2 Цар. 2:12–3:39",
+    "new_testament": "Ин. 13:1–30",
+    "psalm": "Пс.118:1–16",
+    "proverbs": "Пр.15:29–30"
+  },
+  {
+    "date": "05-24",
+    "old_testament": "2 Цар. 4:1–6:23",
+    "new_testament": "Ин. 13:31–14:14",
+    "psalm": "Пс.118:17–32",
+    "proverbs": "Пр.15:31–32"
+  },
+  {
+    "date": "05-25",
+    "old_testament": "2 Цар. 7:1–8:18",
+    "new_testament": "Ин. 14:15–31",
+    "psalm": "Пс.118:33–48",
+    "proverbs": "Пр.15:33"
+  },
+  {
+    "date": "05-26",
+    "old_testament": "2 Цар. 9:1–11:27",
+    "new_testament": "Ин. 15:1–27",
+    "psalm": "Пс.118:49–64",
+    "proverbs": "Пр.16:1–3"
+  },
+  {
+    "date": "05-27",
+    "old_testament": "2 Цар. 12:1–31",
+    "new_testament": "Ин. 16:1–33",
+    "psalm": "Пс.118:65–80",
+    "proverbs": "Пр.16:4–5"
+  },
+  {
+    "date": "05-28",
+    "old_testament": "2 Цар. 13:1–39",
+    "new_testament": "Ин. 17:1–26",
+    "psalm": "Пс.118:81–96",
+    "proverbs": "Пр.16:6–7"
+  },
+  {
+    "date": "05-29",
+    "old_testament": "2 Цар. 14:1–15:22",
+    "new_testament": "Ин. 18:1–24",
+    "psalm": "Пс.118:97–112",
+    "proverbs": "Пр.16:8–9"
+  },
+  {
+    "date": "05-30",
+    "old_testament": "2 Цар. 15:23–16:23",
+    "new_testament": "Ин. 18:25–19:22",
+    "psalm": "Пс.118:113–128",
+    "proverbs": "Пр.16:10–11"
+  },
+  {
+    "date": "06-31",
+    "old_testament": "2 Цар. 17:1–29",
+    "new_testament": "Ин. 19:23–42",
+    "psalm": "Пс.118:129–152",
+    "proverbs": "Пр.16:12–13"
+  },
+  {
+    "date": "06-01",
+    "old_testament": "2 Цар. 18:1–19:10",
+    "new_testament": "Ин. 20:1–31",
+    "psalm": "Пс.118:153–176",
+    "proverbs": "Пр.16:14–15"
+  },
+  {
+    "date": "06-02",
+    "old_testament": "2 Цар. 19:11–20:13",
+    "new_testament": "Ин. 21:1–25",
+    "psalm": "Пс.119:1–7",
+    "proverbs": "Пр.16:16–17"
+  },
+  {
+    "date": "06-03",
+    "old_testament": "2 Цар. 20:14–21:22",
+    "new_testament": "Деян. 1:1–26",
+    "psalm": "Пс.120:1–8",
+    "proverbs": "Пр.16:18"
+  },
+  {
+    "date": "06-04",
+    "old_testament": "2 Цар. 22:1–23:23",
+    "new_testament": "Деян. 2:1–47",
+    "psalm": "Пс.121:1–9",
+    "proverbs": "Пр.16:19–20"
+  },
+  {
+    "date": "06-05",
+    "old_testament": "2 Цар. 23:24–24:25",
+    "new_testament": "Деян. 3:1–26",
+    "psalm": "Пс.122:1–4",
+    "proverbs": "Пр.16:21–23"
+  },
+  {
+    "date": "06-06",
+    "old_testament": "3 Цар. 1:1–53",
+    "new_testament": "Деян. 4:1–37",
+    "psalm": "Пс.123:1–8",
+    "proverbs": "Пр.16:24"
+  },
+  {
+    "date": "06-07",
+    "old_testament": "3 Цар. 2:1–3:2",
+    "new_testament": "Деян. 5:1–42",
+    "psalm": "Пс.124:1–5",
+    "proverbs": "Пр.16:25"
+  },
+  {
+    "date": "06-08",
+    "old_testament": "3 Цар. 3:3–4:34",
+    "new_testament": "Деян. 6:1–15",
+    "psalm": "Пс.125:1–6",
+    "proverbs": "Пр.16:26–27"
+  },
+  {
+    "date": "06-09",
+    "old_testament": "3 Цар. 5:1–6:38",
+    "new_testament": "Деян. 7:1–29",
+    "psalm": "Пс.126:1–5",
+    "proverbs": "Пр.16:28–30"
+  },
+  {
+    "date": "06-10",
+    "old_testament": "3 Цар. 7:1–51",
+    "new_testament": "Деян. 7:30–50",
+    "psalm": "Пс.127:1–6",
+    "proverbs": "Пр.16:31–33"
+  },
+  {
+    "date": "06-11",
+    "old_testament": "3 Цар. 8:1–66",
+    "new_testament": "Деян. 7:51–8:13",
+    "psalm": "Пс.128:1–8",
+    "proverbs": "Пр.17:1"
+  },
+  {
+    "date": "06-12",
+    "old_testament": "3 Цар. 9:1–10:29",
+    "new_testament": "Деян. 8:14–40",
+    "psalm": "Пс.129:1–8",
+    "proverbs": "Пр.17:2–3"
+  },
+  {
+    "date": "06-13",
+    "old_testament": "3 Цар. 11:1–12:19",
+    "new_testament": "Деян. 9:1–25",
+    "psalm": "Пс.130:1–3",
+    "proverbs": "Пр.17:4–5"
+  },
+  {
+    "date": "06-14",
+    "old_testament": "3 Цар. 12:20–13:34",
+    "new_testament": "Деян. 9:26–43",
+    "psalm": "Пс.131:1–18",
+    "proverbs": "Пр.17:6"
+  },
+  {
+    "date": "06-15",
+    "old_testament": "3 Цар. 14:1–15:24",
+    "new_testament": "Деян. 10:1–23",
+    "psalm": "Пс.132:1–3",
+    "proverbs": "Пр.17:7–8"
+  },
+  {
+    "date": "06-16",
+    "old_testament": "3 Цар. 15:25–17:24",
+    "new_testament": "Деян. 10:24–48",
+    "psalm": "Пс.133:1–3",
+    "proverbs": "Пр.17:9–11"
+  },
+  {
+    "date": "06-17",
+    "old_testament": "3 Цар. 18:1–46",
+    "new_testament": "Деян. 11:1–30",
+    "psalm": "Пс.134:1–21",
+    "proverbs": "Пр.17:12–13"
+  },
+  {
+    "date": "06-18",
+    "old_testament": "3 Цар. 19:1–21",
+    "new_testament": "Деян. 12:1–23",
+    "psalm": "Пс.135:1–26",
+    "proverbs": "Пр.17:14–15"
+  },
+  {
+    "date": "06-19",
+    "old_testament": "3 Цар. 20:1–21:29",
+    "new_testament": "Деян. 12:24–13:15",
+    "psalm": "Пс.136:1–9",
+    "proverbs": "Пр.17:16"
+  },
+  {
+    "date": "06-20",
+    "old_testament": "3 Цар. 22:1–53",
+    "new_testament": "Деян. 13:16–41",
+    "psalm": "Пс.137:1–8",
+    "proverbs": "Пр.17:17–18"
+  },
+  {
+    "date": "06-21",
+    "old_testament": "4 Цар. 1:1–2:25",
+    "new_testament": "Деян. 13:42–14:7",
+    "psalm": "Пс.138:1–24",
+    "proverbs": "Пр.17:19–21"
+  },
+  {
+    "date": "06-22",
+    "old_testament": "4 Цар. 3:1–4:17",
+    "new_testament": "Деян. 14:8–28",
+    "psalm": "Пс.139:1–14",
+    "proverbs": "Пр.17:22"
+  },
+  {
+    "date": "06-23",
+    "old_testament": "4 Цар. 4:18–5:27",
+    "new_testament": "Деян. 15:1–35",
+    "psalm": "Пс.140:1–10",
+    "proverbs": "Пр.17:23"
+  },
+  {
+    "date": "06-24",
+    "old_testament": "4 Цар. 6:1–7:20",
+    "new_testament": "Деян. 15:36–16:15",
+    "psalm": "Пс.141:1–7",
+    "proverbs": "Пр.17:24–25"
+  },
+  {
+    "date": "06-25",
+    "old_testament": "4 Цар. 8:1–9:13",
+    "new_testament": "Деян. 16:16–40",
+    "psalm": "Пс.142:1–12",
+    "proverbs": "Пр.17:26"
+  },
+  {
+    "date": "06-26",
+    "old_testament": "4 Цар. 9:14–10:31",
+    "new_testament": "Деян. 17:1–34",
+    "psalm": "Пс.143:1–15",
+    "proverbs": "Пр.17:27–28"
+  },
+  {
+    "date": "06-27",
+    "old_testament": "4 Цар. 10:32–12:21",
+    "new_testament": "Деян. 18:1–22",
+    "psalm": "Пс.144:1–21",
+    "proverbs": "Пр.18:1"
+  },
+  {
+    "date": "06-28",
+    "old_testament": "4 Цар. 13:1–14:29",
+    "new_testament": "Деян. 18:23–19:12",
+    "psalm": "Пс.145:1–10",
+    "proverbs": "Пр.18:2–3"
+  },
+  {
+    "date": "06-29",
+    "old_testament": "4 Цар. 15:1–16:20",
+    "new_testament": "Деян. 19:13–40",
+    "psalm": "Пс.146:1–147:9",
+    "proverbs": "Пр.18:4–5"
+  },
+  {
+    "date": "07-30",
+    "old_testament": "4 Цар. 17:1–18:12",
+    "new_testament": "Деян. 20:1–38",
+    "psalm": "Пс.148:1–14",
+    "proverbs": "Пр.18:6–7"
+  },
+  {
+    "date": "07-01",
+    "old_testament": "4 Цар. 18:13–19:37",
+    "new_testament": "Деян. 21:1–17",
+    "psalm": "Пс.149:1–9",
+    "proverbs": "Пр.18:8"
+  },
+  {
+    "date": "07-02",
+    "old_testament": "4 Цар. 20:1–22:2",
+    "new_testament": "Деян. 21:18–36",
+    "psalm": "Пс.150:1–6",
+    "proverbs": "Пр.18:9–10"
+  },
+  {
+    "date": "07-03",
+    "old_testament": "4 Цар. 22:3–23:30",
+    "new_testament": "Деян. 21:37–22:16",
+    "psalm": "Пс.1:1–6",
+    "proverbs": "Пр.18:11–12"
+  },
+  {
+    "date": "07-04",
+    "old_testament": "4 Цар. 23:31–25:30",
+    "new_testament": "Деян. 22:17–23:10",
+    "psalm": "Пс.2:1–12",
+    "proverbs": "Пр.18:13"
+  },
+  {
+    "date": "07-05",
+    "old_testament": "1 Пар. 1:1–2:17",
+    "new_testament": "Деян. 23:11–35",
+    "psalm": "Пс.3:1–9",
+    "proverbs": "Пр.18:14–15"
+  },
+  {
+    "date": "07-06",
+    "old_testament": "1 Пар. 2:18–4:4",
+    "new_testament": "Деян. 24:1–27",
+    "psalm": "Пс.4:1–9",
+    "proverbs": "Пр.18:16–18"
+  },
+  {
+    "date": "07-07",
+    "old_testament": "1 Пар. 4:5–5:17",
+    "new_testament": "Деян. 25:1–27",
+    "psalm": "Пс.5:1–13",
+    "proverbs": "Пр.18:19"
+  },
+  {
+    "date": "07-08",
+    "old_testament": "1 Пар. 5:18–6:81",
+    "new_testament": "Деян. 26:1–32",
+    "psalm": "Пс.6:1–11",
+    "proverbs": "Пр.18:20–21"
+  },
+  {
+    "date": "07-09",
+    "old_testament": "1 Пар. 7:1–8:40",
+    "new_testament": "Деян. 27:1–20",
+    "psalm": "Пс.7:1–18",
+    "proverbs": "Пр.18:22"
+  },
+  {
+    "date": "07-10",
+    "old_testament": "1 Пар. 9:1–10:14",
+    "new_testament": "Деян. 27:21–44",
+    "psalm": "Пс.8:1–10",
+    "proverbs": "Пр.18:23–25"
+  },
+  {
+    "date": "07-11",
+    "old_testament": "1 Пар. 11:1–12:18",
+    "new_testament": "Деян. 28:1–31",
+    "psalm": "Пс.9:1–12",
+    "proverbs": "Пр.19:1–3"
+  },
+  {
+    "date": "07-12",
+    "old_testament": "1 Пар.12:19–14:17",
+    "new_testament": "Рим. 1:1–17",
+    "psalm": "Пс.9:13–21",
+    "proverbs": "Пр.19:4–5"
+  },
+  {
+    "date": "07-13",
+    "old_testament": "1 Пар.15:1–16:36",
+    "new_testament": "Рим. 1:18–32",
+    "psalm": "Пс.9:22–36",
+    "proverbs": "Пр.19:6–7"
+  },
+  {
+    "date": "07-14",
+    "old_testament": "1 Пар.16:37–18:17",
+    "new_testament": "Рим. 2:1–24",
+    "psalm": "Пс.9:37–39",
+    "proverbs": "Пр.19:8–9"
+  },
+  {
+    "date": "07-15",
+    "old_testament": "1 Пар.19:1–21:30",
+    "new_testament": "Рим. 2:25–3:8",
+    "psalm": "Пс.10:1–7",
+    "proverbs": "Пр.19:10–12"
+  },
+  {
+    "date": "07-16",
+    "old_testament": "1 Пар.22:1–23:32",
+    "new_testament": "Рим. 3:9–31",
+    "psalm": "Пс.11:1–9",
+    "proverbs": "Пр.19:13–14"
+  },
+  {
+    "date": "07-17",
+    "old_testament": "1 Пар.24:1–26:11",
+    "new_testament": "Рим. 4:1–12",
+    "psalm": "Пс.12:1–6",
+    "proverbs": "Пр.19:15–16"
+  },
+  {
+    "date": "07-18",
+    "old_testament": "1 Пар.26:12–27:34",
+    "new_testament": "Рим. 4:13–5:5",
+    "psalm": "Пс.13:1–7",
+    "proverbs": "Пр.19:17"
+  },
+  {
+    "date": "07-19",
+    "old_testament": "1 Пар.28:1–29:30",
+    "new_testament": "Рим. 5:6–21",
+    "psalm": "Пс.14:1–5",
+    "proverbs": "Пр.19:18–19"
+  },
+  {
+    "date": "07-20",
+    "old_testament": "2 Пар.1:1–3:17",
+    "new_testament": "Рим. 6:1–23",
+    "psalm": "Пс.15:1–11",
+    "proverbs": "Пр.19:20–21"
+  },
+  {
+    "date": "07-21",
+    "old_testament": "2 Пар.4:1–6:11",
+    "new_testament": "Рим. 7:1–13",
+    "psalm": "Пс.16:1–15",
+    "proverbs": "Пр.19:22–23"
+  },
+  {
+    "date": "07-22",
+    "old_testament": "2 Пар.6:12–8:10",
+    "new_testament": "Рим. 7:14–8:8",
+    "psalm": "Пс.17:1–15",
+    "proverbs": "Пр.19:24–25"
+  },
+  {
+    "date": "07-23",
+    "old_testament": "2 Пар.8:11–10:19",
+    "new_testament": "Рим. 8:9–25",
+    "psalm": "Пс.17:16–36",
+    "proverbs": "Пр.19:26"
+  },
+  {
+    "date": "07-24",
+    "old_testament": "2 Пар.11:1–13:22",
+    "new_testament": "Рим. 8:26–39",
+    "psalm": "Пс.17:37–51",
+    "proverbs": "Пр.19:27–29"
+  },
+  {
+    "date": "07-25",
+    "old_testament": "2 Пар.14:1–16:14",
+    "new_testament": "Рим. 9:1–24",
+    "psalm": "Пс.18:1–15",
+    "proverbs": "Пр.20:1"
+  },
+  {
+    "date": "07-26",
+    "old_testament": "2 Пар.17:1–18:34",
+    "new_testament": "Рим. 9:25–10:13",
+    "psalm": "Пс.19:1–10",
+    "proverbs": "Пр.20:2–3"
+  },
+  {
+    "date": "07-27",
+    "old_testament": "2 Пар.19:1–20:37",
+    "new_testament": "Рим. 10:14–11:12",
+    "psalm": "Пс.20:1–14",
+    "proverbs": "Пр.20:4–6"
+  },
+  {
+    "date": "07-28",
+    "old_testament": "2 Пар.21:1–23:21",
+    "new_testament": "Рим. 11:13–36",
+    "psalm": "Пс.21:1–18",
+    "proverbs": "Пр.20:7"
+  },
+  {
+    "date": "07-29",
+    "old_testament": "2 Пар.24:1–25:28",
+    "new_testament": "Рим. 12:1–21",
+    "psalm": "Пс.21:19–32",
+    "proverbs": "Пр.20:8–10"
+  },
+  {
+    "date": "07-30",
+    "old_testament": "2 Пар.26:1–28:27",
+    "new_testament": "Рим. 13:1–14",
+    "psalm": "Пс.22:1–6",
+    "proverbs": "Пр.20:11"
+  },
+  {
+    "date": "08-31",
+    "old_testament": "2 Пар.29:1–36",
+    "new_testament": "Рим. 14:1–26",
+    "psalm": "Пс.23:1–10",
+    "proverbs": "Пр.20:12"
+  },
+  {
+    "date": "08-01",
+    "old_testament": "2 Пар. 30:1–31:21",
+    "new_testament": "Рим. 15:1–22",
+    "psalm": "Пс.24:1–15",
+    "proverbs": "Пр.20:13–15"
+  },
+  {
+    "date": "08-02",
+    "old_testament": "2 Пар. 32:1–33:13",
+    "new_testament": "Рим. 15:23–16:9",
+    "psalm": "Пс.24:16–22",
+    "proverbs": "Пр.20:16–18"
+  },
+  {
+    "date": "08-03",
+    "old_testament": "2 Пар. 33:14–34:33",
+    "new_testament": "Рим. 16:10–24",
+    "psalm": "Пс.25:1–12",
+    "proverbs": "Пр.20:19"
+  },
+  {
+    "date": "08-04",
+    "old_testament": "2 Пар. 35:1–36:23",
+    "new_testament": "1 Кор. 1:1–17",
+    "psalm": "Пс.26:1–6",
+    "proverbs": "Пр.20:20–21"
+  },
+  {
+    "date": "08-05",
+    "old_testament": "Езд. 1:1–2:70",
+    "new_testament": "1 Кор. 1:18–2:5",
+    "psalm": "Пс.26:7–14",
+    "proverbs": "Пр.20:22–23"
+  },
+  {
+    "date": "08-06",
+    "old_testament": "Езд. 3:1–4:23",
+    "new_testament": "1 Кор. 2:6–3:4",
+    "psalm": "Пс.27:1–9",
+    "proverbs": "Пр.20:24–25"
+  },
+  {
+    "date": "08-07",
+    "old_testament": "Езд. 4:24–6:22",
+    "new_testament": "1 Кор. 3:5–23",
+    "psalm": "Пс.28:1–11",
+    "proverbs": "Пр.20:26–27"
+  },
+  {
+    "date": "08-08",
+    "old_testament": "Езд. 7:1–8:20",
+    "new_testament": "1 Кор. 4:1–21",
+    "psalm": "Пс.29:1–13",
+    "proverbs": "Пр.20:28–30"
+  },
+  {
+    "date": "08-09",
+    "old_testament": "Езд. 8:21–9:15",
+    "new_testament": "1 Кор. 5:1–13",
+    "psalm": "Пс.30:1–8",
+    "proverbs": "Пр.21:1–2"
+  },
+  {
+    "date": "08-10",
+    "old_testament": "Езд. 10:1–44",
+    "new_testament": "1 Кор. 6:1–20",
+    "psalm": "Пс.30:9–18",
+    "proverbs": "Пр.21:3"
+  },
+  {
+    "date": "08-11",
+    "old_testament": "Неем. 1:1–3:14",
+    "new_testament": "1 Кор. 7:1–24",
+    "psalm": "Пс.30:19–25",
+    "proverbs": "Пр.21:4"
+  },
+  {
+    "date": "08-12",
+    "old_testament": "Неем. 3:15–5:13",
+    "new_testament": "1 Кор. 7:25–40",
+    "psalm": "Пс.31:1–11",
+    "proverbs": "Пр.21:5–7"
+  },
+  {
+    "date": "08-13",
+    "old_testament": "Неем. 5:14–7:73",
+    "new_testament": "1 Кор. 8:1–13",
+    "psalm": "Пс.32:1–11",
+    "proverbs": "Пр.21:8–10"
+  },
+  {
+    "date": "08-14",
+    "old_testament": "Неем. 7:73–9:21",
+    "new_testament": "1 Кор. 9:1–18",
+    "psalm": "Пс.32:12–22",
+    "proverbs": "Пр.21:11–12"
+  },
+  {
+    "date": "08-15",
+    "old_testament": "Неем. 9:22–10:39",
+    "new_testament": "1 Кор. 9:19–10:13",
+    "psalm": "Пс.33:1–10",
+    "proverbs": "Пр.21:13"
+  },
+  {
+    "date": "08-16",
+    "old_testament": "Неем. 11:1–12:26",
+    "new_testament": "1 Кор. 10:14–33",
+    "psalm": "Пс.33:11–23",
+    "proverbs": "Пр.21:14–16"
+  },
+  {
+    "date": "08-17",
+    "old_testament": "Неем. 12:27–13:31",
+    "new_testament": "1 Кор. 11:1–16",
+    "psalm": "Пс.34:1–16",
+    "proverbs": "Пр.21:17–18"
+  },
+  {
+    "date": "08-18",
+    "old_testament": "Есф. 1:1–3:15",
+    "new_testament": "1 Кор. 11:17–34",
+    "psalm": "Пс.34:17–28",
+    "proverbs": "Пр.21:19–20"
+  },
+  {
+    "date": "08-19",
+    "old_testament": "Есф. 4:1–7:10",
+    "new_testament": "1 Кор. 12:1–26",
+    "psalm": "Пс.35:1–13",
+    "proverbs": "Пр.21:21–22"
+  },
+  {
+    "date": "08-20",
+    "old_testament": "Есф. 8:1–10:3",
+    "new_testament": "1 Кор. 12:27–13:13",
+    "psalm": "Пс.36:1–11",
+    "proverbs": "Пр.21:23–24"
+  },
+  {
+    "date": "08-21",
+    "old_testament": "Иов 1:1–3:26",
+    "new_testament": "1 Кор. 14:1–17",
+    "psalm": "Пс.36:12–29",
+    "proverbs": "Пр.21:25–26"
+  },
+  {
+    "date": "08-22",
+    "old_testament": "Иов 4:1–7:21",
+    "new_testament": "1 Кор. 14:18–40",
+    "psalm": "Пс.36:30–40",
+    "proverbs": "Пр.21:27"
+  },
+  {
+    "date": "08-23",
+    "old_testament": "Иов 8:1–11:20",
+    "new_testament": "1 Кор. 15:1–28",
+    "psalm": "Пс.37:1–23",
+    "proverbs": "Пр.21:28–29"
+  },
+  {
+    "date": "08-24",
+    "old_testament": "Иов 12:1–15:35",
+    "new_testament": "1 Кор. 15:29–58",
+    "psalm": "Пс.38:1–14",
+    "proverbs": "Пр.21:30–31"
+  },
+  {
+    "date": "08-25",
+    "old_testament": "Иов 16:1–19:29",
+    "new_testament": "1 Кор. 16:1–24",
+    "psalm": "Пс.39:1–10",
+    "proverbs": "Пр.22:1"
+  },
+  {
+    "date": "08-26",
+    "old_testament": "Иов 20:1–22:30",
+    "new_testament": "2 Кор. 1:1–11",
+    "psalm": "Пс.39:11–18",
+    "proverbs": "Пр.22:2–4"
+  },
+  {
+    "date": "08-27",
+    "old_testament": "Иов 23:1–27:23",
+    "new_testament": "2 Кор. 1:12–2:11",
+    "psalm": "Пс.40:1–14",
+    "proverbs": "Пр.22:5–6"
+  },
+  {
+    "date": "08-28",
+    "old_testament": "Иов 28:1–30:31",
+    "new_testament": "2 Кор. 2:12–17",
+    "psalm": "Пс.41:1–12",
+    "proverbs": "Пр.22:7"
+  },
+  {
+    "date": "08-29",
+    "old_testament": "Иов 31:1–33:33",
+    "new_testament": "2 Кор. 3:1–18",
+    "psalm": "Пс.42:1–5",
+    "proverbs": "Пр.22:8–9"
+  },
+  {
+    "date": "08-30",
+    "old_testament": "Иов 34:1–36:33",
+    "new_testament": "2 Кор. 4:1–12",
+    "psalm": "Пс.43:1–8",
+    "proverbs": "Пр.22:10–12"
+  },
+  {
+    "date": "09-31",
+    "old_testament": "Иов 37:1–39:30",
+    "new_testament": "2 Кор. 4:13–5:10",
+    "psalm": "Пс.43:9–27",
+    "proverbs": "Пр.22:13"
+  },
+  {
+    "date": "09-01",
+    "old_testament": "Иов 39:31–42:17",
+    "new_testament": "2 Кор. 5:11–21",
+    "psalm": "Пс.44:1–18",
+    "proverbs": "Пр.22:14"
+  },
+  {
+    "date": "09-02",
+    "old_testament": "Еккл. 1:1–3:22",
+    "new_testament": "2 Кор. 6:1–13",
+    "psalm": "Пс.45:1–12",
+    "proverbs": "Пр.22:15"
+  },
+  {
+    "date": "09-03",
+    "old_testament": "Еккл. 4:1–6:12",
+    "new_testament": "2 Кор. 6:14–7:7",
+    "psalm": "Пс.46:1–10",
+    "proverbs": "Пр.22:16"
+  },
+  {
+    "date": "09-04",
+    "old_testament": "Еккл. 7:1–9:18",
+    "new_testament": "2 Кор. 7:8–16",
+    "psalm": "Пс.47:1–15",
+    "proverbs": "Пр.22:17–19"
+  },
+  {
+    "date": "09-05",
+    "old_testament": "Еккл. 10:1–12:14",
+    "new_testament": "2 Кор. 8:1–15",
+    "psalm": "Пс.48:1–21",
+    "proverbs": "Пр.22:20–21"
+  },
+  {
+    "date": "09-06",
+    "old_testament": "Песн. 1:1–4:16",
+    "new_testament": "2 Кор. 8:16–24",
+    "psalm": "Пс.49:1–23",
+    "proverbs": "Пр.22:22–23"
+  },
+  {
+    "date": "09-07",
+    "old_testament": "Песн. 5:1–8:14",
+    "new_testament": "2 Кор. 9:1–15",
+    "psalm": "Пс.50:1–21",
+    "proverbs": "Пр.22:24–25"
+  },
+  {
+    "date": "09-08",
+    "old_testament": "Ис. 1:1–2:22",
+    "new_testament": "2 Кор. 10:1–18",
+    "psalm": "Пс.51:11",
+    "proverbs": "Пр.22:26–27"
+  },
+  {
+    "date": "09-09",
+    "old_testament": "Ис. 3:1–5:30",
+    "new_testament": "2 Кор. 11:1–15",
+    "psalm": "Пс.52:1–7",
+    "proverbs": "Пр.22:28–29"
+  },
+  {
+    "date": "09-10",
+    "old_testament": "Ис. 6:1–7:25",
+    "new_testament": "2 Кор. 11:16–32",
+    "psalm": "Пс.53:1–9",
+    "proverbs": "Пр.23:1–3"
+  },
+  {
+    "date": "09-11",
+    "old_testament": "Ис. 8:1–9:21",
+    "new_testament": "2 Кор. 12:1–10",
+    "psalm": "Пс.54:1–24",
+    "proverbs": "Пр.23:4–5"
+  },
+  {
+    "date": "09-12",
+    "old_testament": "Ис. 10:1–11:16",
+    "new_testament": "2 Кор. 12:11–21",
+    "psalm": "Пс.55:1–14",
+    "proverbs": "Пр.23:6–8"
+  },
+  {
+    "date": "09-13",
+    "old_testament": "Ис. 12:1–14:32",
+    "new_testament": "2 Кор. 13:1–13",
+    "psalm": "Пс.56:1–12",
+    "proverbs": "Пр.23:9–11"
+  },
+  {
+    "date": "09-14",
+    "old_testament": "Ис. 15:1–18:7",
+    "new_testament": "Гал. 1:1–24",
+    "psalm": "Пс.57:1–12",
+    "proverbs": "Пр.23:12"
+  },
+  {
+    "date": "09-15",
+    "old_testament": "Ис. 19:1–21:17",
+    "new_testament": "Гал.2:1–16",
+    "psalm": "Пс.58:1–18",
+    "proverbs": "Пр.23:13–14"
+  },
+  {
+    "date": "09-16",
+    "old_testament": "Ис. 22:1–24:23",
+    "new_testament": "Гал. 2:17–3:9",
+    "psalm": "Пс.59:1–14",
+    "proverbs": "Пр.23:15–16"
+  },
+  {
+    "date": "09-17",
+    "old_testament": "Ис. 25:1–28:13",
+    "new_testament": "Гал. 3:10–22",
+    "psalm": "Пс.60:1–9",
+    "proverbs": "Пр.23:17–18"
+  },
+  {
+    "date": "09-18",
+    "old_testament": "Ис. 28:14–30:11",
+    "new_testament": "Гал. 3:23–4:31",
+    "psalm": "Пс.61:1–13",
+    "proverbs": "Пр.23:19–21"
+  },
+  {
+    "date": "09-19",
+    "old_testament": "Ис. 30:12–33:9",
+    "new_testament": "Гал. 5:1–12",
+    "psalm": "Пс.62:1–12",
+    "proverbs": "Пр.23:22"
+  },
+  {
+    "date": "09-20",
+    "old_testament": "Ис. 33:10–36:22",
+    "new_testament": "Гал. 5:13–26",
+    "psalm": "Пс.63:1–11",
+    "proverbs": "Пр.23:23"
+  },
+  {
+    "date": "09-21",
+    "old_testament": "Ис. 37:1–38:22",
+    "new_testament": "Гал. 6:1–18",
+    "psalm": "Пс.64:1–14",
+    "proverbs": "Пр.23:24"
+  },
+  {
+    "date": "09-22",
+    "old_testament": "Ис. 39:1–41:16",
+    "new_testament": "Еф. 1:1–23",
+    "psalm": "Пс.65:1–20",
+    "proverbs": "Пр.23:25–28"
+  },
+  {
+    "date": "09-23",
+    "old_testament": "Ис. 41:17–43:13",
+    "new_testament": "Еф. 2:1–22",
+    "psalm": "Пс.66:1–8",
+    "proverbs": "Пр.23:29–35"
+  },
+  {
+    "date": "09-24",
+    "old_testament": "Ис. 43:14–45:10",
+    "new_testament": "Еф. 3:1–21",
+    "psalm": "Пс.67:1–18",
+    "proverbs": "Пр.24:1–2"
+  },
+  {
+    "date": "09-25",
+    "old_testament": "Ис. 45:11–48:11",
+    "new_testament": "Еф. 4:1–16",
+    "psalm": "Пс.67:19–36",
+    "proverbs": "Пр.24:3–4"
+  },
+  {
+    "date": "09-26",
+    "old_testament": "Ис. 48:12–50:11",
+    "new_testament": "Еф. 4:17–32",
+    "psalm": "Пс.68:1–18",
+    "proverbs": "Пр.24:5–6"
+  },
+  {
+    "date": "09-27",
+    "old_testament": "Ис. 51:1–53:12",
+    "new_testament": "Еф. 5:1–33",
+    "psalm": "Пс.68:19–37",
+    "proverbs": "Пр.24:7"
+  },
+  {
+    "date": "09-28",
+    "old_testament": "Ис. 54:1–57:14",
+    "new_testament": "Еф. 6:1–24",
+    "psalm": "Пс.69:1–6",
+    "proverbs": "Пр.24:8"
+  },
+  {
+    "date": "09-29",
+    "old_testament": "Ис. 57:15–59:21",
+    "new_testament": "Фил. 1:1–26",
+    "psalm": "Пс.70:1–24",
+    "proverbs": "Пр.24:9–10"
+  },
+  {
+    "date": "10-30",
+    "old_testament": "Ис. 60:1–62:5",
+    "new_testament": "Фил. 1:27–2:18",
+    "psalm": "Пс.71:1–20",
+    "proverbs": "Пр.24:11–12"
+  },
+  {
+    "date": "10-01",
+    "old_testament": "Ис. 62:6–65:25",
+    "new_testament": "Фил. 2:19–3:3",
+    "psalm": "Пс.72:1–28",
+    "proverbs": "Пр.24:13–14"
+  },
+  {
+    "date": "10-02",
+    "old_testament": "Ис. 66:1–24",
+    "new_testament": "Фил. 3:4–21",
+    "psalm": "Пс.73:1–23",
+    "proverbs": "Пр.24:15–16"
+  },
+  {
+    "date": "10-03",
+    "old_testament": "Иер. 1:1–2:30",
+    "new_testament": "Фил. 4:1–23",
+    "psalm": "Пс.74:1–11",
+    "proverbs": "Пр.24:17–20"
+  },
+  {
+    "date": "10-04",
+    "old_testament": "Иер. 2:31–4:18",
+    "new_testament": "Кол.1:1–17",
+    "psalm": "Пс.75:1–13",
+    "proverbs": "Пр.24:21–22"
+  },
+  {
+    "date": "10-05",
+    "old_testament": "Иер. 4:19–6:15",
+    "new_testament": "Кол.1:18–2:7",
+    "psalm": "Пс.76:1–21",
+    "proverbs": "Пр.24:23–25"
+  },
+  {
+    "date": "10-06",
+    "old_testament": "Иер. 6:16–8:7",
+    "new_testament": "Кол.2:8–23",
+    "psalm": "Пс.77:1–31",
+    "proverbs": "Пр.24:26"
+  },
+  {
+    "date": "10-07",
+    "old_testament": "Иер. 8:8–9:26",
+    "new_testament": "Кол.3:1–17",
+    "psalm": "Пс.77:32–55",
+    "proverbs": "Пр.24:27"
+  },
+  {
+    "date": "10-08",
+    "old_testament": "Иер. 10:1–11:23",
+    "new_testament": "Кол.3:18–4:18",
+    "psalm": "Пс.77:56–72",
+    "proverbs": "Пр.24:28–29"
+  },
+  {
+    "date": "10-09",
+    "old_testament": "Иер. 12:1–14:10",
+    "new_testament": "1 Фес. 1:1–2:8",
+    "psalm": "Пс.78:1–13",
+    "proverbs": "Пр.24:30–34"
+  },
+  {
+    "date": "10-10",
+    "old_testament": "Иер. 14:11–16:15",
+    "new_testament": "1 Фес. 2:9–3:13",
+    "psalm": "Пс.79:1–20",
+    "proverbs": "Пр.25:1–5"
+  },
+  {
+    "date": "10-11",
+    "old_testament": "Иер. 16:16–18:23",
+    "new_testament": "1 Фес. 4:1–5:3",
+    "psalm": "Пс.80:1–17",
+    "proverbs": "Пр.25:6–8"
+  },
+  {
+    "date": "10-12",
+    "old_testament": "Иер. 19:1–21:14",
+    "new_testament": "1 Фес. 5:4–28",
+    "psalm": "Пс.81:1–8",
+    "proverbs": "Пр.25:9–10"
+  },
+  {
+    "date": "10-13",
+    "old_testament": "Иер. 22:1–23:20",
+    "new_testament": "2 Фес. 1:1–12",
+    "psalm": "Пс.82:1–19",
+    "proverbs": "Пр.25:11–14"
+  },
+  {
+    "date": "10-14",
+    "old_testament": "Иер. 23:21–25:38",
+    "new_testament": "2 Фес. 2:1–17",
+    "psalm": "Пс.83:1–13",
+    "proverbs": "Пр.25:15"
+  },
+  {
+    "date": "10-15",
+    "old_testament": "Иер. 26:1–27:22",
+    "new_testament": "2 Фес. 3:1–18",
+    "psalm": "Пс.84:1–14",
+    "proverbs": "Пр.25:16"
+  },
+  {
+    "date": "10-16",
+    "old_testament": "Иер. 28:1–29:32",
+    "new_testament": "1 Тим. 1:1–20",
+    "psalm": "Пс.85:1–17",
+    "proverbs": "Пр.25:17"
+  },
+  {
+    "date": "10-17",
+    "old_testament": "Иер. 30:1–31:26",
+    "new_testament": "1 Тим. 2:1–15",
+    "psalm": "Пс.86:1–7",
+    "proverbs": "Пр.25:18–19"
+  },
+  {
+    "date": "10-18",
+    "old_testament": "Иер. 31:27–32:44",
+    "new_testament": "1 Тим. 3:1–16",
+    "psalm": "Пс.87:1–19",
+    "proverbs": "Пр.25:20–22"
+  },
+  {
+    "date": "10-19",
+    "old_testament": "Иер. 33:1–34:22",
+    "new_testament": "1 Тим. 4:1–16",
+    "psalm": "Пс.88:1–13",
+    "proverbs": "Пр.25:23–24"
+  },
+  {
+    "date": "10-20",
+    "old_testament": "Иер. 35:1–36:32",
+    "new_testament": "1 Тим. 5:1–25",
+    "psalm": "Пс.88:14–37",
+    "proverbs": "Пр.25:25–27"
+  },
+  {
+    "date": "10-21",
+    "old_testament": "Иер. 37:1–38:28",
+    "new_testament": "1 Тим. 6:1–21",
+    "psalm": "Пс.88:38–53",
+    "proverbs": "Пр.25:28"
+  },
+  {
+    "date": "10-22",
+    "old_testament": "Иер. 39:1–41:18",
+    "new_testament": "2 Тим. 1:1–18",
+    "psalm": "Пс.89:1–90:16",
+    "proverbs": "Пр.26:1–2"
+  },
+  {
+    "date": "10-23",
+    "old_testament": "Иер. 42:1–44:23",
+    "new_testament": "2 Тим. 2:1–21",
+    "psalm": "Пс.91:1–92:5",
+    "proverbs": "Пр.26:3–5"
+  },
+  {
+    "date": "10-24",
+    "old_testament": "Иер. 44:24–47:7",
+    "new_testament": "2 Тим. 2:22–3:17",
+    "psalm": "Пс.93:1–23",
+    "proverbs": "Пр.26:6–8"
+  },
+  {
+    "date": "10-25",
+    "old_testament": "Иер. 48:1–49:22",
+    "new_testament": "2 Тим. 4:1–22",
+    "psalm": "Пс.94:1–95:13",
+    "proverbs": "Пр.26:9–12"
+  },
+  {
+    "date": "10-26",
+    "old_testament": "Иер. 49:23–50:46",
+    "new_testament": "Тит. 1:1–16",
+    "psalm": "Пс.96:1–97:9",
+    "proverbs": "Пр.26:13–16"
+  },
+  {
+    "date": "10-27",
+    "old_testament": "Иер. 51:1–53",
+    "new_testament": "Тит. 2:1–15",
+    "psalm": "Пс.98:1–9",
+    "proverbs": "Пр.26:17"
+  },
+  {
+    "date": "10-28",
+    "old_testament": "Иер. 51:54–52:34",
+    "new_testament": "Тит. 3:1–15",
+    "psalm": "Пс.99:1–5",
+    "proverbs": "Пр.26:18–19"
+  },
+  {
+    "date": "10-29",
+    "old_testament": "Плач 1:1–2:22",
+    "new_testament": "Флм. 1:1–25",
+    "psalm": "Пс.100:1–8",
+    "proverbs": "Пр.26:20"
+  },
+  {
+    "date": "10-30",
+    "old_testament": "Плач 3:1–66",
+    "new_testament": "Евр. 1:1–14",
+    "psalm": "Пс.101:1–29",
+    "proverbs": "Пр.26:21–22"
+  },
+  {
+    "date": "11-31",
+    "old_testament": "Плач 4:1–5:22",
+    "new_testament": "Евр. 2:1–18",
+    "psalm": "Пс.102:1–22",
+    "proverbs": "Пр.26:23"
+  },
+  {
+    "date": "11-01",
+    "old_testament": "Иез. 1:1–3:15",
+    "new_testament": "Евр. 3:1–19",
+    "psalm": "Пс.103:1–23",
+    "proverbs": "Пр.26:24–26"
+  },
+  {
+    "date": "11-02",
+    "old_testament": "Иез. 3:16–6:14",
+    "new_testament": "Евр. 4:1–16",
+    "psalm": "Пс.103:24–35",
+    "proverbs": "Пр.26:27"
+  },
+  {
+    "date": "11-03",
+    "old_testament": "Иез. 7:1–9:11",
+    "new_testament": "Евр. 5:1–14",
+    "psalm": "Пс.104:1–15",
+    "proverbs": "Пр.26:28"
+  },
+  {
+    "date": "11-04",
+    "old_testament": "Иез. 10:1–11:25",
+    "new_testament": "Евр. 6:1–20",
+    "psalm": "Пс.104:16–36",
+    "proverbs": "Пр.27:1–2"
+  },
+  {
+    "date": "11-05",
+    "old_testament": "Иез. 12:1–14:11",
+    "new_testament": "Евр. 7:1–17",
+    "psalm": "Пс.104:37–45",
+    "proverbs": "Пр.27:3"
+  },
+  {
+    "date": "11-06",
+    "old_testament": "Иез. 14:12–16:41",
+    "new_testament": "Евр. 7:18–28",
+    "psalm": "Пс.105:1–12",
+    "proverbs": "Пр.27:4–6"
+  },
+  {
+    "date": "11-07",
+    "old_testament": "Иез. 16:42–17:24",
+    "new_testament": "Евр. 8:1–13",
+    "psalm": "Пс.105:13–31",
+    "proverbs": "Пр.27:7–9"
+  },
+  {
+    "date": "11-08",
+    "old_testament": "Иез. 18:1–19:14",
+    "new_testament": "Евр. 9:1–10",
+    "psalm": "Пс.105:32–48",
+    "proverbs": "Пр.27:10"
+  },
+  {
+    "date": "11-09",
+    "old_testament": "Иез. 20:1–49",
+    "new_testament": "Евр. 9:11–28",
+    "psalm": "Пс.106:1–43",
+    "proverbs": "Пр.27:11"
+  },
+  {
+    "date": "11-10",
+    "old_testament": "Иез. 21:1–22:31",
+    "new_testament": "Евр. 10:1–17",
+    "psalm": "Пс.107:1–14",
+    "proverbs": "Пр.27:12"
+  },
+  {
+    "date": "11-11",
+    "old_testament": "Иез. 23:1–49",
+    "new_testament": "Евр. 10:18–39",
+    "psalm": "Пс.108:1–31",
+    "proverbs": "Пр.27:13"
+  },
+  {
+    "date": "11-12",
+    "old_testament": "Иез. 24:1–26:21",
+    "new_testament": "Евр. 11:1–16",
+    "psalm": "Пс.109:1–7",
+    "proverbs": "Пр.27:14"
+  },
+  {
+    "date": "11-13",
+    "old_testament": "Иез. 27:1–28:26",
+    "new_testament": "Евр. 11:17–31",
+    "psalm": "Пс.110:1–10",
+    "proverbs": "Пр.27:15–16"
+  },
+  {
+    "date": "11-14",
+    "old_testament": "Иез. 29:1–30:26",
+    "new_testament": "Евр. 11:32–12:13",
+    "psalm": "Пс.111:1–10",
+    "proverbs": "Пр.27:17"
+  },
+  {
+    "date": "11-15",
+    "old_testament": "Иез. 31:1–32:32",
+    "new_testament": "Евр. 12:14–29",
+    "psalm": "Пс.112:1–113:8",
+    "proverbs": "Пр.27:18–20"
+  },
+  {
+    "date": "11-16",
+    "old_testament": "Иез. 33:1–34:31",
+    "new_testament": "Евр. 13:1–25",
+    "psalm": "Пс.113:9–26",
+    "proverbs": "Пр.27:21–22"
+  },
+  {
+    "date": "11-17",
+    "old_testament": "Иез. 35:1–36:38",
+    "new_testament": "Иак. 1:1–18",
+    "psalm": "Пс.114:1–115:10",
+    "proverbs": "Пр.27:23–27"
+  },
+  {
+    "date": "11-18",
+    "old_testament": "Иез. 37:1–38:23",
+    "new_testament": "Иак. 1:19–2:17",
+    "psalm": "Пс.116:1–2",
+    "proverbs": "Пр.28:1"
+  },
+  {
+    "date": "11-19",
+    "old_testament": "Иез. 39:1–40:27",
+    "new_testament": "Иак. 2:18–3:18",
+    "psalm": "Пс.117:1–18",
+    "proverbs": "Пр.28:2"
+  },
+  {
+    "date": "11-20",
+    "old_testament": "Иез. 40:28–41:26",
+    "new_testament": "Иак. 4:1–17",
+    "psalm": "Пс.117:19–29",
+    "proverbs": "Пр.28:3–5"
+  },
+  {
+    "date": "11-21",
+    "old_testament": "Иез. 42:1–43:27",
+    "new_testament": "Иак. 5:1–20",
+    "psalm": "Пс.118:1–16",
+    "proverbs": "Пр.28:6–7"
+  },
+  {
+    "date": "11-22",
+    "old_testament": "Иез. 44:1–45:12",
+    "new_testament": "1 Пет. 1:1–12",
+    "psalm": "Пс.118:17–32",
+    "proverbs": "Пр.28:8–10"
+  },
+  {
+    "date": "11-23",
+    "old_testament": "Иез. 45:13–46:24",
+    "new_testament": "1 Пет. 1:13–2:10",
+    "psalm": "Пс.118:33–48",
+    "proverbs": "Пр.28:11"
+  },
+  {
+    "date": "11-24",
+    "old_testament": "Иез. 47:1–48:35",
+    "new_testament": "1 Пет. 2:11–3:7",
+    "psalm": "Пс.118:49–64",
+    "proverbs": "Пр.28:12–13"
+  },
+  {
+    "date": "11-25",
+    "old_testament": "Дан. 1:1–2:23",
+    "new_testament": "1 Пет. 3:8–4:6",
+    "psalm": "Пс.118:65–80",
+    "proverbs": "Пр.28:14"
+  },
+  {
+    "date": "11-26",
+    "old_testament": "Дан. 2:24–3:97",
+    "new_testament": "1 Пет. 4:7–5:14",
+    "psalm": "Пс.118:81–96",
+    "proverbs": "Пр.28:15–16"
+  },
+  {
+    "date": "11-27",
+    "old_testament": "Дан. 3:98–4:34",
+    "new_testament": "2 Пет. 1:1–21",
+    "psalm": "Пс.118:97–112",
+    "proverbs": "Пр.28:17–18"
+  },
+  {
+    "date": "11-28",
+    "old_testament": "Дан. 5:1–31",
+    "new_testament": "2 Пет. 2:1–22",
+    "psalm": "Пс.118:113–1",
+    "proverbs": "Пр.28:19–20"
+  },
+  {
+    "date": "11-29",
+    "old_testament": "Дан. 6:1–28",
+    "new_testament": "2 Пет. 3:1–18",
+    "psalm": "Пс.118:129–152",
+    "proverbs": "Пр.28:21–22"
+  },
+  {
+    "date": "12-30",
+    "old_testament": "Дан. 7:1–28 1",
+    "new_testament": "Ин. 1:1–10",
+    "psalm": "Пс.118:153–176",
+    "proverbs": "Пр.28:23–24"
+  },
+  {
+    "date": "12-01",
+    "old_testament": "Дан. 8:1–27 1",
+    "new_testament": "Ин. 2:1–17",
+    "psalm": "Пс.119:1–7",
+    "proverbs": "Пр.28:25–26"
+  },
+  {
+    "date": "12-02",
+    "old_testament": "Дан. 9:1–11:1 1",
+    "new_testament": "Ин. 2:18–3:6",
+    "psalm": "Пс.120:1–8",
+    "proverbs": "Пр.28:27–28"
+  },
+  {
+    "date": "12-03",
+    "old_testament": "Дан. 11:2–35 1",
+    "new_testament": "Ин. 3:7–24",
+    "psalm": "Пс.121:1–9",
+    "proverbs": "Пр.29:1"
+  },
+  {
+    "date": "12-04",
+    "old_testament": "Дан. 11:36–12:13 1",
+    "new_testament": "Ин. 4:1–21",
+    "psalm": "Пс.122:1–4",
+    "proverbs": "Пр.29:2–4"
+  },
+  {
+    "date": "12-05",
+    "old_testament": "Ос. 1:1–3:5 1",
+    "new_testament": "Ин. 5:1–21",
+    "psalm": "Пс.123:1–8",
+    "proverbs": "Пр.29:5–8"
+  },
+  {
+    "date": "12-06",
+    "old_testament": "Ос. 4:1–5:15 2",
+    "new_testament": "Ин. 1:1–13",
+    "psalm": "Пс.124:1–5",
+    "proverbs": "Пр.29:9–11"
+  },
+  {
+    "date": "12-07",
+    "old_testament": "Ос. 6:1–9:17 3",
+    "new_testament": "Ин. 1:1–15",
+    "psalm": "Пс.125:1–6",
+    "proverbs": "Пр.29:12–14"
+  },
+  {
+    "date": "12-08",
+    "old_testament": "Ос. 10:1–14:10",
+    "new_testament": "Иуд. 1:1–25",
+    "psalm": "Пс.126:1–5",
+    "proverbs": "Пр.29:15–17"
+  },
+  {
+    "date": "12-09",
+    "old_testament": "Иоиль 1:1–3:21",
+    "new_testament": "Откр.1:1–20",
+    "psalm": "Пс.127:1–6",
+    "proverbs": "Пр.29:18"
+  },
+  {
+    "date": "12-10",
+    "old_testament": "Ам. 1:1–3:15",
+    "new_testament": "Откр.2:1–17",
+    "psalm": "Пс.128:1–8",
+    "proverbs": "Пр.29:19–20"
+  },
+  {
+    "date": "12-11",
+    "old_testament": "Ам. 4:1–6:14",
+    "new_testament": "Откр.2:18–3:6",
+    "psalm": "Пс.129:1–8",
+    "proverbs": "Пр.29:21–22"
+  },
+  {
+    "date": "12-12",
+    "old_testament": "Ам. 7:1–9:15",
+    "new_testament": "Откр.3:7–22",
+    "psalm": "Пс.130:1–3",
+    "proverbs": "Пр.29:23"
+  },
+  {
+    "date": "12-13",
+    "old_testament": "Авд. 1:1–21",
+    "new_testament": "Откр.4:1–11",
+    "psalm": "Пс.131:1–18",
+    "proverbs": "Пр.29:24–25"
+  },
+  {
+    "date": "12-14",
+    "old_testament": "Иона 1:1–4:11",
+    "new_testament": "Откр.5:1–14",
+    "psalm": "Пс.132:1–3",
+    "proverbs": "Пр.29:26–27"
+  },
+  {
+    "date": "12-15",
+    "old_testament": "Мих. 1:1–4:13",
+    "new_testament": "Откр.6:1–17",
+    "psalm": "Пс.133:1–3",
+    "proverbs": "Пр.30:1–4"
+  },
+  {
+    "date": "12-16",
+    "old_testament": "Мих. 5:1–7:20",
+    "new_testament": "Откр.7:1–17",
+    "psalm": "Пс.134:1–21",
+    "proverbs": "Пр.30:5–6"
+  },
+  {
+    "date": "12-17",
+    "old_testament": "Наум 1:1–3:19",
+    "new_testament": "Откр.8:1–13",
+    "psalm": "Пс.135:1–26",
+    "proverbs": "Пр.30:7–9"
+  },
+  {
+    "date": "12-18",
+    "old_testament": "Авв. 1:1–3:19",
+    "new_testament": "Откр.9:1–21",
+    "psalm": "Пс.136:1–9",
+    "proverbs": "Пр.30:10"
+  },
+  {
+    "date": "12-19",
+    "old_testament": "Соф. 1:1–3:20",
+    "new_testament": "Откр.10:1–11",
+    "psalm": "Пс.137:1–8",
+    "proverbs": "Пр.30:11–14"
+  },
+  {
+    "date": "12-20",
+    "old_testament": "Агг. 1:1–2:23",
+    "new_testament": "Откр.11:1–19",
+    "psalm": "Пс.138:1–24",
+    "proverbs": "Пр.30:15–16"
+  },
+  {
+    "date": "12-21",
+    "old_testament": "Зах. 1:1–21",
+    "new_testament": "Откр.12:1–17",
+    "psalm": "Пс.139:1–14",
+    "proverbs": "Пр.30:17"
+  },
+  {
+    "date": "12-22",
+    "old_testament": "Зах. 2:1–3:10",
+    "new_testament": "Откр.13:1–18",
+    "psalm": "Пс.140:1–10",
+    "proverbs": "Пр.30:18–20"
+  },
+  {
+    "date": "12-23",
+    "old_testament": "Зах. 4:1–5:11",
+    "new_testament": "Откр.14:1–20",
+    "psalm": "Пс.141:1–7",
+    "proverbs": "Пр.30:21–23"
+  },
+  {
+    "date": "12-24",
+    "old_testament": "Зах. 6:1–7:14",
+    "new_testament": "Откр.15:1–8",
+    "psalm": "Пс.142:1–12",
+    "proverbs": "Пр.30:24–28"
+  },
+  {
+    "date": "12-25",
+    "old_testament": "Зах. 8:1–23",
+    "new_testament": "Откр.16:1–21",
+    "psalm": "Пс.143:1–15",
+    "proverbs": "Пр.30:29–31"
+  },
+  {
+    "date": "12-26",
+    "old_testament": "Зах. 9:1–17",
+    "new_testament": "Откр.17:1–18",
+    "psalm": "Пс.144:1–21",
+    "proverbs": "Пр.30:32"
+  },
+  {
+    "date": "12-27",
+    "old_testament": "Зах. 10:1–11:17",
+    "new_testament": "Откр.18:1–24",
+    "psalm": "Пс.145:1–10",
+    "proverbs": "Пр.30:33"
+  },
+  {
+    "date": "12-28",
+    "old_testament": "Зах. 12:1–13:9",
+    "new_testament": "Откр.19:1–21",
+    "psalm": "Пс.146:1–147:9",
+    "proverbs": "Пр.31:1–7"
+  },
+  {
+    "date": "12-29",
+    "old_testament": "Зах. 14:1–21",
+    "new_testament": "Откр.20:1–15",
+    "psalm": "Пс.148:1–14",
+    "proverbs": "Пр.31:8–9"
+  },
+  {
+    "date": "12-30",
+    "old_testament": "Мал. 1:1–2:17",
+    "new_testament": "Откр.21:1–27",
+    "psalm": "Пс.149:1–9",
+    "proverbs": "Пр.31:10–24"
+  },
+  {
+    "date": "12-31",
+    "old_testament": "Мал. 3:1–4:6",
+    "new_testament": "Откр.22:1–21",
+    "psalm": "Пс.150:1–6",
+    "proverbs": "Пр.31:25–31"
+  }
+]

@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>План читання Біблії — Дім Євангелія</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a365d;
+            --accent: #3182ce;
+            --success: #38a169;
+            --warning: #d69e2e;
+            --bg-main: #f7fafc;
+            --bg-card: #ffffff;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-success: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Upload Screen */
+        .upload-screen {
+            max-width: 500px;
+            margin: 4rem auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .upload-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .upload-screen h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .upload-screen p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .btn-upload {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .file-input-wrapper:hover .btn-upload {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+
+        .stats-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .stats-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .progress-bar {
+            height: 14px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-success);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-main);
+            border-radius: 12px;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Date Navigator */
+        .date-navigator {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .date-navigator h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-btn {
+            background: var(--bg-main);
+            border: 2px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Reading List */
+        .reading-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .reading-item {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reading-item:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .reading-item.done {
+            background: linear-gradient(135deg, #f0fff4 0%, #e6ffef 100%);
+            border-color: var(--success);
+        }
+
+        .checkbox {
+            width: 28px;
+            height: 28px;
+            border: 3px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .reading-item.done .checkbox {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .reading-item.done .checkbox::after {
+            content: "✓";
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .reading-content {
+            flex: 1;
+        }
+
+        .reading-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .reading-ref {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+
+        .reading-item.done .reading-ref {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .reading-item-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .reading-item.done .reading-item-actions {
+            border-top-color: rgba(56, 161, 105, 0.2);
+        }
+
+        .comment-btn {
+            background: var(--bg-main);
+            border: 2px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comment-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .comment-btn.has-comment {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .comment-preview {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background: var(--bg-main);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Comment Modal */
+        .comment-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10000;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .comment-modal {
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .comment-modal-header h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .comment-modal-body {
+            padding: 2rem;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .comment-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .comment-reference {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .comment-textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            transition: all 0.3s;
+        }
+
+        .comment-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .comment-modal-footer {
+            padding: 1.5rem 2rem;
+            border-top: 2px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .modal-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .modal-btn-cancel {
+            background: var(--bg-main);
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .modal-btn-cancel:hover {
+            background: var(--border);
+        }
+
+        .modal-btn-save {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .modal-btn-save:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .modal-btn-delete {
+            background: #e53e3e;
+            color: white;
+            margin-right: auto;
+        }
+
+        .modal-btn-delete:hover {
+            background: #c53030;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 2rem;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .calendar-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .calendar-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .streak-display {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .streak-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .streak-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .quick-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            padding: 0.875rem;
+            border: 2px solid var(--border);
+            background: var(--bg-main);
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .action-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Days List Modal */
+        .days-list-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9998;
+            backdrop-filter: blur(4px);
+        }
+
+        .days-list-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            z-index: 9999;
+            max-width: 800px;
+            width: 90%;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .close-btn:hover {
+            background: var(--bg-main);
+            color: var(--primary);
+        }
+
+        .modal-filters {
+            padding: 1rem 2rem;
+            background: var(--bg-main);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .filter-btn:hover:not(.active) {
+            border-color: var(--accent);
+        }
+
+        .modal-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 1.5rem 2rem;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            min-width: min-content;
+        }
+
+        @media (max-width: 768px) {
+            .days-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .day-card {
+            background: var(--bg-main);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .day-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .day-card.completed {
+            background: linear-gradient(135deg, #f0fff4 0%, #e6ffef 100%);
+            border-color: var(--success);
+        }
+
+        .day-card.partial {
+            background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%);
+            border-color: var(--warning);
+        }
+
+        .day-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .day-date {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .day-progress-badge {
+            background: var(--text-secondary);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .day-card.completed .day-progress-badge {
+            background: var(--success);
+        }
+
+        .day-card.partial .day-progress-badge {
+            background: var(--warning);
+        }
+
+        .day-tasks {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .day-task-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .task-check {
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .day-task-item.done .task-check {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .day-task-item.done .task-check::after {
+            content: "✓";
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .day-task-item.done {
+            opacity: 0.7;
+        }
+
+        .task-name {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* Scrollbar styling */
+        .modal-content::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: var(--bg-main);
+            border-radius: 5px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 5px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+
+        .modal-content::-webkit-scrollbar-corner {
+            background: var(--bg-main);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reading-item {
+            animation: fadeIn 0.4s ease-out backwards;
+        }
+
+        .reading-item:nth-child(1) { animation-delay: 0.1s; }
+        .reading-item:nth-child(2) { animation-delay: 0.2s; }
+        .reading-item:nth-child(3) { animation-delay: 0.3s; }
+        .reading-item:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            header p { font-size: 1rem; }
+            .stats-number { font-size: 1.5rem; }
+            .date-navigator { flex-direction: column; gap: 1rem; }
+            .nav-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📖 Церква "Дім Євангелія"</h1>
+    <p>План читання Біблії 2026 • м. Суми, Україна</p>
+</header>
+
+<div class="container">
+    <!-- Upload Screen -->
+    <div id="upload-screen" class="upload-screen">
+        <div class="upload-icon">📚</div>
+        <h2>Річний план читання Біблії</h2>
+        <p>Завантажте файл bible_plan.json для початку</p>
+        <div class="file-input-wrapper">
+            <button class="btn-upload">Вибрати файл</button>
+            <input type="file" id="fileInput" accept=".json">
+        </div>
+    </div>
+
+    <!-- Main Interface -->
+    <div id="main-interface" class="hidden">
+        <!-- Progress Stats -->
+        <div class="stats-bar">
+            <div class="stats-header">
+                <span class="stats-title">Прогрес за рік</span>
+                <span class="stats-number" id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="completed-count">0</div>
+                    <div class="stat-label">Виконано</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="remaining-count">0</div>
+                    <div class="stat-label">Залишилось</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="days-count">365</div>
+                    <div class="stat-label">Днів у плані</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Main Content -->
+            <div>
+                <div class="date-navigator">
+                    <button class="nav-btn" onclick="changeDate(-1)">← Назад</button>
+                    <h2 id="current-date">1 січня</h2>
+                    <button class="nav-btn" onclick="changeDate(1)">Вперед →</button>
+                </div>
+
+                <div class="reading-list" id="reading-list">
+                    <!-- Reading items will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="sidebar-card">
+                    <h3>Швидкий перехід</h3>
+                    <input type="date" id="calendar-input" class="calendar-input">
+                    
+                    <div class="streak-display">
+                        <div class="streak-number" id="streak-days">0</div>
+                        <div class="streak-label">днів підряд 🔥</div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="goToToday()">📅 Сьогоднішній день</button>
+                        <button class="action-btn" onclick="markAllComplete()">✓ Позначити все</button>
+                        <button class="action-btn" onclick="toggleDaysList()">📋 Список днів</button>
+                        <button class="action-btn" onclick="resetProgress()">🔄 Скинути прогрес</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<!-- Days List Modal -->
+<div id="days-list-overlay" class="days-list-overlay hidden" onclick="toggleDaysList()"></div>
+<div id="days-list-modal" class="days-list-modal hidden">
+    <div class="modal-header">
+        <h2>📅 Всі дні плану</h2>
+        <button class="close-btn" onclick="toggleDaysList()">×</button>
+    </div>
+    <div class="modal-filters">
+        <button class="filter-btn active" onclick="filterDays('all')">Всі</button>
+        <button class="filter-btn" onclick="filterDays('completed')">✓ Виконані</button>
+        <button class="filter-btn" onclick="filterDays('partial')">◐ Частково</button>
+        <button class="filter-btn" onclick="filterDays('pending')">○ Невиконані</button>
+    </div>
+    <div class="modal-content">
+        <div class="days-grid" id="days-grid">
+            <!-- Days will be inserted here -->
+        </div>
+    </div>
+</div>
+
+<!-- Comment Modal -->
+<div id="comment-modal-overlay" class="comment-modal-overlay hidden">
+    <div class="comment-modal" onclick="event.stopPropagation()">
+        <div class="comment-modal-header">
+            <h3>💭 Мої нотатки</h3>
+            <button class="close-btn" onclick="closeCommentModal()">×</button>
+        </div>
+        <div class="comment-modal-body">
+            <div class="comment-label" id="comment-task-label">Старий Завіт</div>
+            <div class="comment-reference" id="comment-reference">Буття 1-3</div>
+            <textarea 
+                class="comment-textarea" 
+                id="comment-textarea" 
+                placeholder="Введіть свої думки, роздуми чи питання про прочитане..."></textarea>
+        </div>
+        <div class="comment-modal-footer">
+            <button class="modal-btn modal-btn-delete" id="delete-comment-btn" onclick="deleteComment()">🗑️ Видалити</button>
+            <button class="modal-btn modal-btn-cancel" onclick="closeCommentModal()">Скасувати</button>
+            <button class="modal-btn modal-btn-save" onclick="saveComment()">💾 Зберегти</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 <strong>Церква "Дім Євангелія"</strong>, м. Суми | План читання Біблії на 2026 рік</p>
+    <p style="opacity: 0.7; font-size: 0.9rem;">Слово Боже живе і діюче</p>
+</footer>
+
+<script>
+    let biblePlan = [];
+    let progress = JSON.parse(localStorage.getItem('bible_progress_2026') || '{}');
+    let comments = JSON.parse(localStorage.getItem('bible_comments_2026') || '{}');
+    let activeDate = new Date();
+    if (activeDate.getFullYear() !== 2026) activeDate = new Date('2026-01-01');
+    let currentFilter = 'all';
+    let currentCommentKey = null;
+
+    const fileInput = document.getElementById('fileInput');
+    const calendarInput = document.getElementById('calendar-input');
+
+    // Auto-load bible_plan.json if available
+    async function autoLoadPlan() {
+        try {
+            const response = await fetch('bible_plan.json');
+            if (response.ok) {
+                const data = await response.json();
+                biblePlan = data;
+                document.getElementById('upload-screen').classList.add('hidden');
+                document.getElementById('main-interface').classList.remove('hidden');
+                updateUI();
+                return true;
+            }
+        } catch (err) {
+            console.log('bible_plan.json не знайдено, показуємо екран завантаження');
+        }
+        return false;
+    }
+
+    // Try to auto-load on page load
+    autoLoadPlan();
+
+    // File upload
+    fileInput.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                biblePlan = JSON.parse(event.target.result);
+                document.getElementById('upload-screen').classList.add('hidden');
+                document.getElementById('main-interface').classList.remove('hidden');
+                updateUI();
+            } catch (err) {
+                alert('Помилка завантаження файлу. Перевірте формат JSON.');
+            }
+        };
+        reader.readAsText(file);
+    };
+
+    // Calendar navigation
+    calendarInput.onchange = (e) => {
+        activeDate = new Date(e.target.value);
+        updateUI();
+    };
+
+    function updateUI() {
+        const m = String(activeDate.getMonth() + 1).padStart(2, '0');
+        const d = String(activeDate.getDate()).padStart(2, '0');
+        const dateKey = `${m}-${d}`;
+        
+        // Update date display
+        document.getElementById('current-date').textContent = 
+            activeDate.toLocaleDateString('uk-UA', { day: 'numeric', month: 'long' });
+        
+        calendarInput.value = activeDate.toISOString().split('T')[0];
+
+        // Find day data
+        const dayData = biblePlan.find(i => i.date === dateKey);
+        const listContainer = document.getElementById('reading-list');
+        listContainer.innerHTML = '';
+
+        if (dayData) {
+            const tasks = [
+                { id: 'ot', label: 'Старий Завіт', ref: dayData.old_testament },
+                { id: 'nt', label: 'Новий Завіт', ref: dayData.new_testament },
+                { id: 'ps', label: 'Псалми', ref: dayData.psalm },
+                { id: 'pr', label: 'Притчі', ref: dayData.proverbs }
+            ];
+
+            tasks.forEach(task => {
+                const taskKey = `${dateKey}_${task.id}`;
+                const isDone = progress[taskKey];
+                const hasComment = comments[taskKey];
+                
+                const item = document.createElement('div');
+                item.className = `reading-item ${isDone ? 'done' : ''}`;
+                
+                item.innerHTML = `
+                    <div class="checkbox" onclick="toggleTask('${dateKey}', '${task.id}', event)"></div>
+                    <div class="reading-content">
+                        <div class="reading-label">${task.label}</div>
+                        <div class="reading-ref">${task.ref}</div>
+                        ${isDone ? `
+                            <div class="reading-item-actions">
+                                <button class="comment-btn ${hasComment ? 'has-comment' : ''}" 
+                                        onclick="openCommentModal('${dateKey}', '${task.id}', '${task.label}', '${task.ref}', event)">
+                                    💭 ${hasComment ? 'Редагувати нотатку' : 'Додати нотатку'}
+                                </button>
+                            </div>
+                            ${hasComment ? `<div class="comment-preview">${truncateText(comments[taskKey], 100)}</div>` : ''}
+                        ` : ''}
+                    </div>
+                `;
+                listContainer.appendChild(item);
+            });
+        } else {
+            listContainer.innerHTML = '<p style="text-align:center; color: var(--text-secondary); padding: 2rem;">Немає даних для цієї дати</p>';
+        }
+
+        updateProgress();
+        updateStreak();
+    }
+
+    function truncateText(text, maxLength) {
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength) + '...';
+    }
+
+    function toggleTask(dateKey, taskId, event) {
+        if (event) event.stopPropagation();
+        const taskKey = `${dateKey}_${taskId}`;
+        if (progress[taskKey]) {
+            delete progress[taskKey];
+        } else {
+            progress[taskKey] = true;
+        }
+        localStorage.setItem('bible_progress_2026', JSON.stringify(progress));
+        updateUI();
+    }
+
+    function updateProgress() {
+        const total = biblePlan.length * 4;
+        const completed = Object.keys(progress).length;
+        const remaining = total - completed;
+        const percent = Math.round((completed / total) * 100) || 0;
+
+        document.getElementById('progress-fill').style.width = percent + '%';
+        document.getElementById('progress-percent').textContent = percent + '%';
+        document.getElementById('completed-count').textContent = completed;
+        document.getElementById('remaining-count').textContent = remaining;
+        document.getElementById('days-count').textContent = biblePlan.length;
+    }
+
+    function updateStreak() {
+        // Calculate consecutive days
+        let streak = 0;
+        let checkDate = new Date();
+        checkDate.setHours(0, 0, 0, 0);
+
+        while (true) {
+            const m = String(checkDate.getMonth() + 1).padStart(2, '0');
+            const d = String(checkDate.getDate()).padStart(2, '0');
+            const dateKey = `${m}-${d}`;
+            
+            const dayTasks = ['ot', 'nt', 'ps', 'pr'];
+            const allComplete = dayTasks.every(taskId => progress[`${dateKey}_${taskId}`]);
+            
+            if (allComplete) {
+                streak++;
+                checkDate.setDate(checkDate.getDate() - 1);
+            } else {
+                break;
+            }
+            
+            if (streak > 365) break; // Safety limit
+        }
+
+        document.getElementById('streak-days').textContent = streak;
+    }
+
+    function changeDate(days) {
+        activeDate.setDate(activeDate.getDate() + days);
+        updateUI();
+    }
+
+    function goToToday() {
+        activeDate = new Date();
+        if (activeDate.getFullYear() !== 2026) activeDate = new Date('2026-01-01');
+        updateUI();
+    }
+
+    function markAllComplete() {
+        const m = String(activeDate.getMonth() + 1).padStart(2, '0');
+        const d = String(activeDate.getDate()).padStart(2, '0');
+        const dateKey = `${m}-${d}`;
+        
+        ['ot', 'nt', 'ps', 'pr'].forEach(taskId => {
+            progress[`${dateKey}_${taskId}`] = true;
+        });
+        
+        localStorage.setItem('bible_progress_2026', JSON.stringify(progress));
+        updateUI();
+    }
+
+    function resetProgress() {
+        if (confirm('Ви впевнені, що хочете скинути весь прогрес?')) {
+            progress = {};
+            localStorage.setItem('bible_progress_2026', JSON.stringify(progress));
+            updateUI();
+            if (!document.getElementById('days-list-modal').classList.contains('hidden')) {
+                renderDaysList();
+            }
+        }
+    }
+
+    function toggleDaysList() {
+        const modal = document.getElementById('days-list-modal');
+        const overlay = document.getElementById('days-list-overlay');
+        
+        if (modal.classList.contains('hidden')) {
+            modal.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            renderDaysList();
+        } else {
+            modal.classList.add('hidden');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    }
+
+    function renderDaysList() {
+        const grid = document.getElementById('days-grid');
+        grid.innerHTML = '';
+
+        biblePlan.forEach(day => {
+            const tasks = [
+                { id: 'ot', name: 'СЗ', ref: day.old_testament },
+                { id: 'nt', name: 'НЗ', ref: day.new_testament },
+                { id: 'ps', name: 'Пс', ref: day.psalm },
+                { id: 'pr', name: 'Пр', ref: day.proverbs }
+            ];
+
+            const completedTasks = tasks.filter(task => 
+                progress[`${day.date}_${task.id}`]
+            ).length;
+
+            const status = completedTasks === 4 ? 'completed' : 
+                          completedTasks > 0 ? 'partial' : 'pending';
+
+            // Filter
+            if (currentFilter !== 'all' && currentFilter !== status) {
+                return;
+            }
+
+            // Parse date
+            const [month, dayNum] = day.date.split('-');
+            const dateObj = new Date(2026, parseInt(month) - 1, parseInt(dayNum));
+            const dateStr = dateObj.toLocaleDateString('uk-UA', { 
+                day: 'numeric', 
+                month: 'long' 
+            });
+
+            const card = document.createElement('div');
+            card.className = `day-card ${status}`;
+            card.onclick = () => {
+                activeDate = dateObj;
+                toggleDaysList();
+                updateUI();
+            };
+
+            card.innerHTML = `
+                <div class="day-card-header">
+                    <div class="day-date">${dateStr}</div>
+                    <div class="day-progress-badge">${completedTasks}/4</div>
+                </div>
+                <div class="day-tasks">
+                    ${tasks.map(task => `
+                        <div class="day-task-item ${progress[`${day.date}_${task.id}`] ? 'done' : ''}">
+                            <div class="task-check"></div>
+                            <span class="task-name">${task.name}:</span>
+                            <span>${task.ref}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            grid.appendChild(card);
+        });
+
+        if (grid.children.length === 0) {
+            grid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">Немає днів для цього фільтра</p>';
+        }
+    }
+
+    function filterDays(filter) {
+        currentFilter = filter;
+        
+        // Update button states
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+        
+        renderDaysList();
+    }
+
+    function openCommentModal(dateKey, taskId, label, ref, event) {
+        if (event) event.stopPropagation();
+        
+        currentCommentKey = `${dateKey}_${taskId}`;
+        
+        document.getElementById('comment-task-label').textContent = label;
+        document.getElementById('comment-reference').textContent = ref;
+        document.getElementById('comment-textarea').value = comments[currentCommentKey] || '';
+        
+        const deleteBtn = document.getElementById('delete-comment-btn');
+        deleteBtn.style.display = comments[currentCommentKey] ? 'block' : 'none';
+        
+        document.getElementById('comment-modal-overlay').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => document.getElementById('comment-textarea').focus(), 100);
+    }
+
+    function closeCommentModal() {
+        document.getElementById('comment-modal-overlay').classList.add('hidden');
+        document.body.style.overflow = '';
+        currentCommentKey = null;
+    }
+
+    function saveComment() {
+        if (!currentCommentKey) return;
+        
+        const commentText = document.getElementById('comment-textarea').value.trim();
+        
+        if (commentText) {
+            comments[currentCommentKey] = commentText;
+        } else {
+            delete comments[currentCommentKey];
+        }
+        
+        localStorage.setItem('bible_comments_2026', JSON.stringify(comments));
+        closeCommentModal();
+        updateUI();
+    }
+
+    function deleteComment() {
+        if (!currentCommentKey) return;
+        
+        if (confirm('Ви впевнені, що хочете видалити цю нотатку?')) {
+            delete comments[currentCommentKey];
+            localStorage.setItem('bible_comments_2026', JSON.stringify(comments));
+            closeCommentModal();
+            updateUI();
+        }
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const commentModal = document.getElementById('comment-modal-overlay');
+            if (!commentModal.classList.contains('hidden')) {
+                closeCommentModal();
+            }
+        }
+    });
+
+    // Close modal on overlay click
+    document.getElementById('comment-modal-overlay').addEventListener('click', (e) => {
+        if (e.target.id === 'comment-modal-overlay') {
+            closeCommentModal();
+        }
+    });
+
+
+</script>
+
+</body>
+</html>
